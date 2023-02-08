@@ -279,7 +279,7 @@ lst1[[2]][1,1]
 
 #levels
 #order=
-(levels 및 order를 생략하면 default로 처리됨)
+#(levels 및 order를 생략하면 default로 처리됨)
 grade<-c('A','A','B','C','B','B')
 f2.grade<-factor(grade,order=T)
 
@@ -365,15 +365,28 @@ lst
 # 6. x,y,z1을 변수로 갖는 데이터프레임을 생성하고 dat로 저장하시오. (문자열 요인화 방지)
 dat=data.frame(x,y,z1)
 dat
-# 7. 6의 dat 중에서 첫번째와 두번째 변수를 선택하여 행렬로 변환하시오. 
+# 7. 6의 dat 중에서 첫번째와 두번째 변수를 선택하여 행렬로 변환하시오.
 as.matrix(dat[-3])
-# 8. 6의 dat 중에서 첫번째와 세번째 변수를 선택하여 행렬로 변환하시오. 
+# 8. 6의 dat 중에서 첫번째와 세번째 변수를 선택하여 행렬로 변환하시오.
 as.matrix(dat[-2])
 
-# 9. 1의 x 벡터에서 10보다 크고 20보다 작은 원소의 합을 구하시오. 
+# 9. 1의 x 벡터에서 10보다 크고 20보다 작은 원소의 합을 구하시오.
 sum(x[x>10&x<20])
 
 # 10. 4의 xmat에서 행의 합, 열의 평균, 열의 분산 값을 각각 계산하시오.
-sum(xmat[1:6,])
-mean(xmat[,1:5])
+sum(xmat[1,])
+sum(xmat[2,])
+sum(xmat[3,])
+sum(xmat[4,])
+sum(xmat[5,])
+sum(xmat[6,])
+mean(xmat[,1])
+mean(xmat[,2])
+mean(xmat[,3])
+mean(xmat[,4])
+mean(xmat[,5])
 var(xmat[,1])
+var(xmat[,2])
+var(xmat[,3])
+var(xmat[,4])
+var(xmat[,5])
