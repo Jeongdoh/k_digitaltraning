@@ -1,4 +1,4 @@
-class solution:
+class solution():
     def twosum(self, nums, target):
         for i in range(len(nums)):
             for j in range(i+1, len(nums)):
@@ -10,4 +10,4 @@ class solution:
 
 
 a=solution()
-a.twosum([1,1,3],6)
+a.twosum([3,5,2],5)
