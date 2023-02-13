@@ -1,17 +1,24 @@
 # 1. for 문을 이용하여 구구단 1단부터 9단까지 출력하는 코드를 작성하시오.
-for (i in 1:9)
+for (i in 1:9){
     for (j in 1:9){
     cat(i,'*',j,'=',i*j,'\n')
 }
-
+cat('\n')
+}
 
 # 2. 1번의 구구단 출력을 아래와 같이 진행하여 보시오 (탭이 안되시면 띄어쓰기로)
-for (i in 1:9)
-    for (j in 1:9){
-    cat(i,'*',j,'=',i*j,'\n')
+# for (i in 1:9)
+#     for (j in 1:9){
+#     cat(i,'*',j,'=',i*j,'\n')
+# }
+
+#풀이
+for(i in 1:3){
+for(j in 1:9){
+cat(i,' * ', j, ' = ', j*i,' ', i+3,' * ', j, ' = ', (j+3)*(i),' ', i+6,' * ', j, ' = ', (j+6)*(i),' ','\n')
 }
-
-
+cat('\n')
+}
 
 
 # 3. while 문과 조건문을 이용하여 아래와 같이 출력하는 코드를 작성하시 오
@@ -37,10 +44,11 @@ s=0
 for (i in seq(1,100)){
     s=s+i
     if (s>=1000){
+        print(i)
+        print(s)
         break
     }
 }
-s
 
 
 # 5. 반복문을 이용하여 50에서 100까지의 합을 계산할 때, 짝수의 합을 계 산하는 코드를 작성하시오. 
@@ -81,22 +89,63 @@ vvv(x,5)
 
 
 # 8. 7에서 작성한 함수에서 새로운 인수를 생략 시 원소의 합이 출력하도록 default 설정을 적용하시오.
+#함수의 인수는 default로 설정이 가능하며 default 설정된 인수 들은 생략이 가능
+# mean.k2 <- function(x,k=3){
+# return(mean(x^k))
+# }
+# mean.k(a,2)
+# mean.k(a)
 
-vvv <- function(x,another) {
+vvv <- function(x,another=1) {
 return(switch(another,length_x=length(x),sum_x=sum(x),min_x=min(x),max_x=max(x),mean_x=mean(x),var_x=var(x)))
 }
 
 
 x=1:10
-vvv(x,5)
+vvv(x)
 
 
 
 # 9. 1 – 9 사이의 숫자 2개를 입력 받아 작은 수 부터 큰 수까지의 구구단을 출력하는 함수를 작성하시오. 
 # (ex, 3과 4를 입력 시)
 
+#구구단 에제
+# googoo81 <- function(x) {
+# cat('\n')
+# for(i in 1:9) {
+# cat(x, ' * ',i, ' = ', x*i, '\n')
+# }
+# cat('\n')
+# }
+# googoo81(5)
+
+googoodan=function(x,y){
+    for( i in 1:9){
+        cat(x, '*', i,'=',x*i, '\n')
+    }
+    for(j in 1:9){
+        cat(y,'*',i,'=',x*y,'\n')
+    }
+}
+
+googoodan(5,2)
 
 
 
 
-
+func2<-function(a,b){
+if (a>b){
+    min_numeric<-b
+    max_numeric<-a
+} else if (a<b){
+    min_numeric<-a
+    max_numeric<-b
+} else{
+    min_numeric<-a
+    max_numeric<-a
+}   
+for(j in min_numeric:max_numeric){
+        for(i in 1:9){
+    cat(j,' * ', i, ' = ', j*i,'\n')
+}}}
+func2(5,1)

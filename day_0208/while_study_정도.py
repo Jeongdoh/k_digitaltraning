@@ -1,3 +1,15 @@
+#3번 map으로 풀기
+while 1:
+    a,b=input("숫자 입력").split(" ")
+    print(a,b)
+    if a=='0' and b=='0':
+        print("입력받은 숫자가 모두 0입니다.")
+        break
+    else:
+        num1,num2=map(int,[a,b])
+        print(num1+num2)
+
+
 # 리스트 컴프리핸션
 a=[i for i in range(1,51) if i%3==0]
 print(a)
@@ -36,10 +48,6 @@ while 1:
         print(num1+num2)
 
 
-a,b=input("숫자 입력").split(" ")
-print(a,b)
-num1,num2=map(int,[a,b])
-print(num1+num2)
 
 #문제4. 1부터 100사이의 모든 3의 배수의 합을 계산하여 출력하세요.
 while 1:
