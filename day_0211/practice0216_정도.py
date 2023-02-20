@@ -9,7 +9,7 @@
 # std_weight(1.77,'man')
 
 
-# # # 1. 반복문을 이용하여 60의 약수를 구하세요.
+# # # # 1. 반복문을 이용하여 60의 약수를 구하세요.
 # a=[]
 # for i in range(1,61):
 #     if 60%i==0:
@@ -50,7 +50,7 @@
 #                 print("돈이 부족합니다. 거스름돈은 {0}원 입니다.".format(money))
 #                 break
 #         elif choice=='2':
-#             print("종료합니다. 거스름돈은 {0}원 입니다.".format(money-coffee))
+#             print("종료합니다. 거스름돈은 {0}원 입니다.".format(money))
 #             break
 #     else:
 #         print("돈이 부족합니다. 거스름돈은 {0}원 입니다.".format(money))
@@ -59,7 +59,7 @@
 
     
 
-# # 4. 두 정수 A,B를 받아 A+B를 출력하세요. 이 과정을 5번 반복하세요.
+# # # 4. 두 정수 A,B를 받아 A+B를 출력하세요. 이 과정을 5번 반복하세요.
 # num=1
 # while num<=5:
 #     A=int(input("A를 입력하세요 : "))
@@ -67,8 +67,35 @@
 #     print(A+B)
 #     num+=1
 
+# ######
+# while 1:
+#     a,b=map(int, input().split())
+#     if a==0 and b==0:
+#         break
+#     print(a+b)
 
-# # 5. 다이아 몬드 모양의 별찍기를 하세요. 단 n=input으로 이루어집니다.
+
+# ######
+# n=int(input())
+# for _ in range(n):
+#     a,b=map(int,input().split())
+#     print(a+b)
+
+
+# # # 5. 다이아 몬드 모양의 별찍기를 하세요. 단 n=input으로 이루어집니다.
+
+# for 문
+# for i in range(1,9+1):
+#     print('1'*(9-i),end='')
+#     print('*'*(1+(i-1)*2),end='')
+#     print('')
+# for j in range(9,0,-1):
+#     print('1'*(9-j),end='')
+#     print('*'*(1+(j-1)*2),end='')
+#     print('')
+
+
+
 # n=int(input("n을 입력하세요 : "))
 # while 1:
 #     for i in range(1,n+1):
@@ -82,16 +109,45 @@
 #     break
 
 
-# for 문
 
-for i in range(1,9+1):
-    print('1'*(9-i),end='')
-    print('*'*(1+(i-1)*2),end='')
-    # print('')
-# for j in range(9,0,-1):
-#     print('1'*(9-j),end='')
-#     print('*'*(1+(j-1)*2),end='')
-#     print('')
+
+
+# # 호림씨 방법
+# n=int(input())
+# i=1
+# switch=True
+# while True:
+#     star='*'*(2*i-1)
+#     if switch==True:
+#         print(star.center(2*n+1))
+#         i+=1
+#         if i==n+1:
+#             switch=False
+#     else:
+#         print(star.center(2*n+1))
+#         i-=1
+#         if i==-1:
+#             break
+
+# # 호림씨 방법
+# n=int(input())
+# i=0
+# switch=True
+# while True:
+#     if switch==True: 
+#         print(' '*(n-i),'*'*(2*i+1 ))
+#         i+=1
+#         if i==n+1:
+#             switch=False
+
+#     else:
+#         if i==-1: 
+#             break
+#         i-=1        
+#         print(' '*(n-i+1),'*'*(2*i-1 )) 
+
+
+
 
 
 
