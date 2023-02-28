@@ -103,68 +103,128 @@ cancer_70_df
 
 
 
-cor(cancer_20_df$X2, cancer_20_df$X3)
-cor(cancer_30_df$X2, cancer_30_df$X3)
-cor(cancer_40_df$X2, cancer_40_df$X3)
-cor(cancer_50_df$X2, cancer_50_df$X3)
-cor(cancer_60_df$X2, cancer_60_df$X3)
-cor(cancer_70_df$X2, cancer_70_df$X3)
+cancer_20_man<-cancer_20_df[1:10,]
+cancer_20_woman<-cancer_20_df[11:20,]
+cancer_20_man
+
+cancer_30_man<-cancer_30_df[1:10,]
+cancer_30_woman<-cancer_30_df[11:20,]
 
 
-# 위 코드는 각 연령대별 데이터프레임에서 X2와 X3의 상관관계를 계산하고 있습니다.
-
-# cancer_20_df: 0.4988936 (약한 양의 상관관계)
-# cancer_30_df: -0.2306078 (약한 음의 상관관계)
-# cancer_40_df: -0.6835816 (뚜렷한 음의 상관관계)
-# cancer_50_df: -0.7394686 (뚜렷한 음의 상관관계)
-# cancer_60_df: -0.1702963 (약한 음의 상관관계)
-# cancer_70_df: 0.7803566 (뚜렷한 양의 상관관계)
-# 20대에서는 X2와 X3 사이에 약한 양의 상관관계가 있으며, 
-# 30대부터는 음의 상관관계가 나타납니다. 
-# 특히 40대부터는 뚜렷한 음의 상관관계가 나타나며, 
-# 70대에서는 뚜렷한 양의 상관관계가 나타납니다. 
-# 이러한 결과는 각 연령대별로 X2와 X3 간의 관련성이 다르게 나타날 수 있음을 시사합니다.
+cancer_40_man<-cancer_40_df[1:10,]
+cancer_40_woman<-cancer_40_df[11:20,]
 
 
+cancer_50_man<-cancer_50_df[1:10,]
+cancer_50_woman<-cancer_50_df[11:20,]
 
 
+cancer_60_man<-cancer_60_df[1:10,]
+cancer_60_woman<-cancer_60_df[11:20,]
 
 
+cancer_70_man<-cancer_70_df[1:10,]
+cancer_70_woman<-cancer_70_df[11:20,]
 
-cor(cancer_20_df)
-cor(cancer_30_df)
-cor(cancer_40_df)
-cor(cancer_50_df)
-cor(cancer_60_df)
-cor(cancer_70_df)
+cancer_man<-c(cancer_20_man,cancer_30_man,cancer_40_man,cancer_50_man,cancer_60_man,cancer_70_man)
+cancer_man<-data.frame(cancer_man)
+cancer_man
+
+cancer_woman<-c(cancer_20_woman,cancer_30_woman,cancer_40_woman,cancer_50_woman,cancer_60_woman,cancer_70_woman)
+cancer_woman<-data.frame(cancer_woman)
+cancer_woman
 
 
 
 
 
+cor(cancer_man$X2,cancer_man$X3)
+cor(cancer_woman$X2,cancer_woman$X3)
+
+cor(cancer_man$X2.1,cancer_man$X3.1)
+cor(cancer_woman$X2.1,cancer_woman$X3.1)
+
+cor(cancer_man$X2.2,cancer_man$X3.2)
+cor(cancer_woman$X2.2,cancer_woman$X3.2)
+
+cor(cancer_man$X2.3,cancer_man$X3.3)
+cor(cancer_woman$X2.3,cancer_woman$X3.3)
+
+cor(cancer_man$X2.4,cancer_man$X3.4)
+cor(cancer_woman$X2.4,cancer_woman$X3.4)
+
+cor(cancer_man$X2.5,cancer_man$X3.5)
+cor(cancer_woman$X2.5,cancer_woman$X3.5)
 
 
 
+# 20대 남 회귀분석
+model2 <- lm(cancer_man$X2 ~ cancer_man$X3, data = cancer_man)
+# 회귀분석 결과 출력
+summary(model2)
+
+# 20대 여 회귀분석
+model22 <- lm(cancer_woman$X2 ~ cancer_woman$X3)
+# 회귀분석 결과 출력
+summary(model22)
 
 
 
+# 30대 남 회귀분석
+model3 <- lm(cancer_man$X2.1~cancer_man$X3.1)
+# 회귀분석 결과 출력
+summary(model3)
+
+# 30대 여 회귀분석
+model33 <- lm(cancer_woman$X2.1~cancer_woman$X3.1)
+# 회귀분석 결과 출력
+summary(model33)
 
 
 
+# 40대 남 회귀분석
+model4 <- lm(cancer_man$X2.2~cancer_man$X3.2)
+# 회귀분석 결과 출력
+summary(model4)
+
+# 40대 여 회귀분석
+model44 <- lm(cancer_woman$X2.2~cancer_woman$X3.2)
+# 회귀분석 결과 출력
+summary(model44)
 
 
 
-library(ggplot2)
+# 50대 남 회귀분석
+model5 <- lm(cancer_man$X2.3~cancer_man$X3.3)
+# 회귀분석 결과 출력
+summary(model5)
 
-ggplot(cancer_20_df, aes(x=X2, y=X3, size=X1, color=X1)) + 
-  geom_point() + 
-  scale_size(range = c(2,6)) +
-  labs(title="췌장암과 당뇨병 간의 상관관계 그래프", 
-       x="췌장암", y="당뇨병") +
-  theme(plot.title = element_text(hjust = 0.5))
-
-
-
+# 50대 여 회귀분석
+model55 <- lm(cancer_woman$X2.3~cancer_woman$X3.3)
+# 회귀분석 결과 출력
+summary(model55)
 
 
+
+# 60대 남 회귀분석
+model6 <- lm(cancer_man$X2.4~cancer_man$X3.4)
+# 회귀분석 결과 출력
+summary(model6)
+
+# 60대 여 회귀분석
+model66 <- lm(cancer_woman$X2.4~cancer_woman$X3.4)
+# 회귀분석 결과 출력
+summary(model66)
+
+
+
+# 70대 남 회귀분석
+model7 <- lm(cancer_man$X2.5~cancer_man$X3.5)
+# 회귀분석 결과 출력
+summary(model7)
+
+# 70대 여 회귀분석
+model77 <- lm(cancer_woman$X2.5~cancer_woman$X3.5)
+# 회귀분석 결과 출력
+summary(model77)
 
