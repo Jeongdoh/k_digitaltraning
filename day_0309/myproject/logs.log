@@ -15240,3 +15240,1877 @@ ValueError: n_splits=10 cannot be greater than the number of members in each cla
 2023-03-13 16:16:21,844:ERROR:(Process Exit): setup has been interupted with user command 'quit'. setup must rerun.
 2023-03-13 16:16:21,845:INFO:Creating global containers
 2023-03-13 16:16:21,846:INFO:Internal pipeline: Pipeline(memory=None, steps=[('empty_step', 'passthrough')], verbose=False)
+2023-03-13 16:16:23,346:WARNING:Couldn't import xgboost.XGBClassifier
+2023-03-13 16:16:23,346:WARNING:Couldn't import catboost.CatBoostClassifier
+2023-03-13 16:16:23,409:WARNING:Couldn't import xgboost.XGBClassifier
+2023-03-13 16:16:23,410:WARNING:Couldn't import catboost.CatBoostClassifier
+2023-03-13 16:16:23,411:INFO:Creating grid variables
+2023-03-13 16:16:23,424:INFO:create_model_container: 0
+2023-03-13 16:16:23,424:INFO:master_model_container: 0
+2023-03-13 16:16:23,424:INFO:display_container: 1
+2023-03-13 16:16:23,430:INFO:Pipeline(memory=None,
+         steps=[('dtypes',
+                 DataTypes_Auto_infer(categorical_features=[],
+                                      display_types=True, features_todrop=[],
+                                      id_columns=[],
+                                      ml_usecase='classification',
+                                      numerical_features=[], target='이름',
+                                      time_features=[])),
+                ('imputer',
+                 Simple_Imputer(categorical_strategy='not_available',
+                                fill_value_categorical=None,
+                                fill_value_numerical=None,
+                                numeric_strategy=...
+                ('scaling', 'passthrough'), ('P_transform', 'passthrough'),
+                ('binn', 'passthrough'), ('rem_outliers', 'passthrough'),
+                ('cluster_all', 'passthrough'), ('dummy', Dummify(target='이름')),
+                ('fix_perfect', Remove_100(target='이름')),
+                ('clean_names', Clean_Colum_Names()),
+                ('feature_select', 'passthrough'), ('fix_multi', 'passthrough'),
+                ('dfs', 'passthrough'), ('pca', 'passthrough')],
+         verbose=False)
+2023-03-13 16:16:23,430:INFO:setup() succesfully completed......................................
+2023-03-13 16:16:23,536:INFO:Initializing compare_models()
+2023-03-13 16:16:23,536:INFO:compare_models(include=None, fold=None, round=4, cross_validation=True, sort=Accuracy, n_select=1, budget_time=None, turbo=True, errors=ignore, fit_kwargs=None, groups=None, experiment_custom_tags=None, probability_threshold=None, verbose=True, display=None, exclude=None)
+2023-03-13 16:16:23,536:INFO:Checking exceptions
+2023-03-13 16:16:23,537:INFO:Preparing display monitor
+2023-03-13 16:16:23,537:INFO:Preparing display monitor
+2023-03-13 16:16:23,558:INFO:Initializing Logistic Regression
+2023-03-13 16:16:23,558:INFO:Total runtime is 0.0 minutes
+2023-03-13 16:16:23,567:INFO:SubProcess create_model() called ==================================
+2023-03-13 16:16:23,567:INFO:Initializing create_model()
+2023-03-13 16:16:23,567:INFO:create_model(estimator=lr, fold=StratifiedKFold(n_splits=10, random_state=None, shuffle=False), round=4, cross_validation=True, predict=True, fit_kwargs={}, groups=None, refit=False, verbose=False, system=False, metrics=None, experiment_custom_tags=None, add_to_model_list=True, probability_threshold=None, display=<pycaret.internal.Display.Display object at 0x00000170E48D3730>, return_train_score=False, kwargs={})
+2023-03-13 16:16:23,568:INFO:Checking exceptions
+2023-03-13 16:16:23,568:INFO:Importing libraries
+2023-03-13 16:16:23,568:INFO:Copying training dataset
+2023-03-13 16:16:23,569:INFO:Defining folds
+2023-03-13 16:16:23,569:INFO:Declaring metric variables
+2023-03-13 16:16:23,576:INFO:Importing untrained model
+2023-03-13 16:16:23,584:INFO:Logistic Regression Imported succesfully
+2023-03-13 16:16:23,599:INFO:Starting cross validation
+2023-03-13 16:16:23,599:INFO:Cross validating with StratifiedKFold(n_splits=10, random_state=None, shuffle=False), n_jobs=-1
+2023-03-13 16:16:23,609:WARNING:create_model() for lr raised an exception or returned all 0.0, trying without fit_kwargs:
+2023-03-13 16:16:23,615:WARNING:Traceback (most recent call last):
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\site-packages\joblib\parallel.py", line 862, in dispatch_one_batch
+    tasks = self._ready_batches.get(block=False)
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\queue.py", line 167, in get
+    raise Empty
+_queue.Empty
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\site-packages\pycaret\internal\tabular.py", line 2203, in compare_models
+    model, model_fit_time = create_model_supervised(**create_model_args)
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\site-packages\pycaret\internal\tabular.py", line 3200, in create_model_supervised
+    scores = cross_validate(
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\site-packages\sklearn\utils\validation.py", line 72, in inner_f
+    return f(**kwargs)
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\site-packages\sklearn\model_selection\_validation.py", line 242, in cross_validate
+    scores = parallel(
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\site-packages\joblib\parallel.py", line 1085, in __call__
+    if self.dispatch_one_batch(iterator):
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\site-packages\joblib\parallel.py", line 873, in dispatch_one_batch
+    islice = list(itertools.islice(iterator, big_batch_size))
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\site-packages\sklearn\model_selection\_validation.py", line 242, in <genexpr>
+    scores = parallel(
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\site-packages\sklearn\model_selection\_split.py", line 336, in split
+    for train, test in super().split(X, y, groups):
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\site-packages\sklearn\model_selection\_split.py", line 80, in split
+    for test_index in self._iter_test_masks(X, y, groups):
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\site-packages\sklearn\model_selection\_split.py", line 697, in _iter_test_masks
+    test_folds = self._make_test_folds(X, y)
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\site-packages\sklearn\model_selection\_split.py", line 666, in _make_test_folds
+    raise ValueError("n_splits=%d cannot be greater than the"
+ValueError: n_splits=10 cannot be greater than the number of members in each class.
+
+2023-03-13 16:16:23,615:INFO:Initializing create_model()
+2023-03-13 16:16:23,617:INFO:create_model(estimator=lr, fold=StratifiedKFold(n_splits=10, random_state=None, shuffle=False), round=4, cross_validation=True, predict=True, fit_kwargs={}, groups=None, refit=False, verbose=False, system=False, metrics=None, experiment_custom_tags=None, add_to_model_list=True, probability_threshold=None, display=<pycaret.internal.Display.Display object at 0x00000170E48D3730>, return_train_score=False, kwargs={})
+2023-03-13 16:16:23,617:INFO:Checking exceptions
+2023-03-13 16:16:23,617:INFO:Importing libraries
+2023-03-13 16:16:23,617:INFO:Copying training dataset
+2023-03-13 16:16:23,618:INFO:Defining folds
+2023-03-13 16:16:23,618:INFO:Declaring metric variables
+2023-03-13 16:16:23,625:INFO:Importing untrained model
+2023-03-13 16:16:23,631:INFO:Logistic Regression Imported succesfully
+2023-03-13 16:16:23,645:INFO:Starting cross validation
+2023-03-13 16:16:23,646:INFO:Cross validating with StratifiedKFold(n_splits=10, random_state=None, shuffle=False), n_jobs=-1
+2023-03-13 16:16:23,647:ERROR:create_model() for lr raised an exception or returned all 0.0:
+2023-03-13 16:16:23,649:ERROR:Traceback (most recent call last):
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\site-packages\joblib\parallel.py", line 862, in dispatch_one_batch
+    tasks = self._ready_batches.get(block=False)
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\queue.py", line 167, in get
+    raise Empty
+_queue.Empty
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\site-packages\pycaret\internal\tabular.py", line 2203, in compare_models
+    model, model_fit_time = create_model_supervised(**create_model_args)
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\site-packages\pycaret\internal\tabular.py", line 3200, in create_model_supervised
+    scores = cross_validate(
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\site-packages\sklearn\utils\validation.py", line 72, in inner_f
+    return f(**kwargs)
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\site-packages\sklearn\model_selection\_validation.py", line 242, in cross_validate
+    scores = parallel(
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\site-packages\joblib\parallel.py", line 1085, in __call__
+    if self.dispatch_one_batch(iterator):
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\site-packages\joblib\parallel.py", line 873, in dispatch_one_batch
+    islice = list(itertools.islice(iterator, big_batch_size))
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\site-packages\sklearn\model_selection\_validation.py", line 242, in <genexpr>
+    scores = parallel(
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\site-packages\sklearn\model_selection\_split.py", line 336, in split
+    for train, test in super().split(X, y, groups):
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\site-packages\sklearn\model_selection\_split.py", line 80, in split
+    for test_index in self._iter_test_masks(X, y, groups):
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\site-packages\sklearn\model_selection\_split.py", line 697, in _iter_test_masks
+    test_folds = self._make_test_folds(X, y)
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\site-packages\sklearn\model_selection\_split.py", line 666, in _make_test_folds
+    raise ValueError("n_splits=%d cannot be greater than the"
+ValueError: n_splits=10 cannot be greater than the number of members in each class.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\site-packages\joblib\parallel.py", line 862, in dispatch_one_batch
+    tasks = self._ready_batches.get(block=False)
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\queue.py", line 167, in get
+    raise Empty
+_queue.Empty
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\site-packages\pycaret\internal\tabular.py", line 2212, in compare_models
+    model, model_fit_time = create_model_supervised(**create_model_args)
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\site-packages\pycaret\internal\tabular.py", line 3200, in create_model_supervised
+    scores = cross_validate(
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\site-packages\sklearn\utils\validation.py", line 72, in inner_f
+    return f(**kwargs)
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\site-packages\sklearn\model_selection\_validation.py", line 242, in cross_validate
+    scores = parallel(
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\site-packages\joblib\parallel.py", line 1085, in __call__
+    if self.dispatch_one_batch(iterator):
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\site-packages\joblib\parallel.py", line 873, in dispatch_one_batch
+    islice = list(itertools.islice(iterator, big_batch_size))
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\site-packages\sklearn\model_selection\_validation.py", line 242, in <genexpr>
+    scores = parallel(
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\site-packages\sklearn\model_selection\_split.py", line 336, in split
+    for train, test in super().split(X, y, groups):
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\site-packages\sklearn\model_selection\_split.py", line 80, in split
+    for test_index in self._iter_test_masks(X, y, groups):
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\site-packages\sklearn\model_selection\_split.py", line 697, in _iter_test_masks
+    test_folds = self._make_test_folds(X, y)
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\site-packages\sklearn\model_selection\_split.py", line 666, in _make_test_folds
+    raise ValueError("n_splits=%d cannot be greater than the"
+ValueError: n_splits=10 cannot be greater than the number of members in each class.
+
+2023-03-13 16:16:23,649:INFO:Initializing K Neighbors Classifier
+2023-03-13 16:16:23,649:INFO:Total runtime is 0.0015153845151265463 minutes
+2023-03-13 16:16:23,657:INFO:SubProcess create_model() called ==================================
+2023-03-13 16:16:23,657:INFO:Initializing create_model()
+2023-03-13 16:16:23,657:INFO:create_model(estimator=knn, fold=StratifiedKFold(n_splits=10, random_state=None, shuffle=False), round=4, cross_validation=True, predict=True, fit_kwargs={}, groups=None, refit=False, verbose=False, system=False, metrics=None, experiment_custom_tags=None, add_to_model_list=True, probability_threshold=None, display=<pycaret.internal.Display.Display object at 0x00000170E48D3730>, return_train_score=False, kwargs={})
+2023-03-13 16:16:23,657:INFO:Checking exceptions
+2023-03-13 16:16:23,657:INFO:Importing libraries
+2023-03-13 16:16:23,657:INFO:Copying training dataset
+2023-03-13 16:16:23,659:INFO:Defining folds
+2023-03-13 16:16:23,659:INFO:Declaring metric variables
+2023-03-13 16:16:23,669:INFO:Importing untrained model
+2023-03-13 16:16:23,675:INFO:K Neighbors Classifier Imported succesfully
+2023-03-13 16:16:23,690:INFO:Starting cross validation
+2023-03-13 16:16:23,690:INFO:Cross validating with StratifiedKFold(n_splits=10, random_state=None, shuffle=False), n_jobs=-1
+2023-03-13 16:16:23,692:WARNING:create_model() for knn raised an exception or returned all 0.0, trying without fit_kwargs:
+2023-03-13 16:16:23,694:WARNING:Traceback (most recent call last):
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\site-packages\joblib\parallel.py", line 862, in dispatch_one_batch
+    tasks = self._ready_batches.get(block=False)
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\queue.py", line 167, in get
+    raise Empty
+_queue.Empty
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\site-packages\pycaret\internal\tabular.py", line 2203, in compare_models
+    model, model_fit_time = create_model_supervised(**create_model_args)
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\site-packages\pycaret\internal\tabular.py", line 3200, in create_model_supervised
+    scores = cross_validate(
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\site-packages\sklearn\utils\validation.py", line 72, in inner_f
+    return f(**kwargs)
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\site-packages\sklearn\model_selection\_validation.py", line 242, in cross_validate
+    scores = parallel(
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\site-packages\joblib\parallel.py", line 1085, in __call__
+    if self.dispatch_one_batch(iterator):
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\site-packages\joblib\parallel.py", line 873, in dispatch_one_batch
+    islice = list(itertools.islice(iterator, big_batch_size))
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\site-packages\sklearn\model_selection\_validation.py", line 242, in <genexpr>
+    scores = parallel(
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\site-packages\sklearn\model_selection\_split.py", line 336, in split
+    for train, test in super().split(X, y, groups):
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\site-packages\sklearn\model_selection\_split.py", line 80, in split
+    for test_index in self._iter_test_masks(X, y, groups):
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\site-packages\sklearn\model_selection\_split.py", line 697, in _iter_test_masks
+    test_folds = self._make_test_folds(X, y)
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\site-packages\sklearn\model_selection\_split.py", line 666, in _make_test_folds
+    raise ValueError("n_splits=%d cannot be greater than the"
+ValueError: n_splits=10 cannot be greater than the number of members in each class.
+
+2023-03-13 16:16:23,694:INFO:Initializing create_model()
+2023-03-13 16:16:23,694:INFO:create_model(estimator=knn, fold=StratifiedKFold(n_splits=10, random_state=None, shuffle=False), round=4, cross_validation=True, predict=True, fit_kwargs={}, groups=None, refit=False, verbose=False, system=False, metrics=None, experiment_custom_tags=None, add_to_model_list=True, probability_threshold=None, display=<pycaret.internal.Display.Display object at 0x00000170E48D3730>, return_train_score=False, kwargs={})
+2023-03-13 16:16:23,694:INFO:Checking exceptions
+2023-03-13 16:16:23,694:INFO:Importing libraries
+2023-03-13 16:16:23,694:INFO:Copying training dataset
+2023-03-13 16:16:23,695:INFO:Defining folds
+2023-03-13 16:16:23,695:INFO:Declaring metric variables
+2023-03-13 16:16:23,718:INFO:Importing untrained model
+2023-03-13 16:16:23,728:INFO:K Neighbors Classifier Imported succesfully
+2023-03-13 16:16:23,760:INFO:Starting cross validation
+2023-03-13 16:16:23,761:INFO:Cross validating with StratifiedKFold(n_splits=10, random_state=None, shuffle=False), n_jobs=-1
+2023-03-13 16:16:23,763:ERROR:create_model() for knn raised an exception or returned all 0.0:
+2023-03-13 16:16:23,764:ERROR:Traceback (most recent call last):
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\site-packages\joblib\parallel.py", line 862, in dispatch_one_batch
+    tasks = self._ready_batches.get(block=False)
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\queue.py", line 167, in get
+    raise Empty
+_queue.Empty
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\site-packages\pycaret\internal\tabular.py", line 2203, in compare_models
+    model, model_fit_time = create_model_supervised(**create_model_args)
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\site-packages\pycaret\internal\tabular.py", line 3200, in create_model_supervised
+    scores = cross_validate(
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\site-packages\sklearn\utils\validation.py", line 72, in inner_f
+    return f(**kwargs)
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\site-packages\sklearn\model_selection\_validation.py", line 242, in cross_validate
+    scores = parallel(
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\site-packages\joblib\parallel.py", line 1085, in __call__
+    if self.dispatch_one_batch(iterator):
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\site-packages\joblib\parallel.py", line 873, in dispatch_one_batch
+    islice = list(itertools.islice(iterator, big_batch_size))
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\site-packages\sklearn\model_selection\_validation.py", line 242, in <genexpr>
+    scores = parallel(
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\site-packages\sklearn\model_selection\_split.py", line 336, in split
+    for train, test in super().split(X, y, groups):
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\site-packages\sklearn\model_selection\_split.py", line 80, in split
+    for test_index in self._iter_test_masks(X, y, groups):
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\site-packages\sklearn\model_selection\_split.py", line 697, in _iter_test_masks
+    test_folds = self._make_test_folds(X, y)
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\site-packages\sklearn\model_selection\_split.py", line 666, in _make_test_folds
+    raise ValueError("n_splits=%d cannot be greater than the"
+ValueError: n_splits=10 cannot be greater than the number of members in each class.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\site-packages\joblib\parallel.py", line 862, in dispatch_one_batch
+    tasks = self._ready_batches.get(block=False)
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\queue.py", line 167, in get
+    raise Empty
+_queue.Empty
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\site-packages\pycaret\internal\tabular.py", line 2212, in compare_models
+    model, model_fit_time = create_model_supervised(**create_model_args)
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\site-packages\pycaret\internal\tabular.py", line 3200, in create_model_supervised
+    scores = cross_validate(
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\site-packages\sklearn\utils\validation.py", line 72, in inner_f
+    return f(**kwargs)
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\site-packages\sklearn\model_selection\_validation.py", line 242, in cross_validate
+    scores = parallel(
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\site-packages\joblib\parallel.py", line 1085, in __call__
+    if self.dispatch_one_batch(iterator):
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\site-packages\joblib\parallel.py", line 873, in dispatch_one_batch
+    islice = list(itertools.islice(iterator, big_batch_size))
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\site-packages\sklearn\model_selection\_validation.py", line 242, in <genexpr>
+    scores = parallel(
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\site-packages\sklearn\model_selection\_split.py", line 336, in split
+    for train, test in super().split(X, y, groups):
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\site-packages\sklearn\model_selection\_split.py", line 80, in split
+    for test_index in self._iter_test_masks(X, y, groups):
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\site-packages\sklearn\model_selection\_split.py", line 697, in _iter_test_masks
+    test_folds = self._make_test_folds(X, y)
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\site-packages\sklearn\model_selection\_split.py", line 666, in _make_test_folds
+    raise ValueError("n_splits=%d cannot be greater than the"
+ValueError: n_splits=10 cannot be greater than the number of members in each class.
+
+2023-03-13 16:16:23,765:INFO:Initializing Naive Bayes
+2023-03-13 16:16:23,765:INFO:Total runtime is 0.00345455010732015 minutes
+2023-03-13 16:16:23,774:INFO:SubProcess create_model() called ==================================
+2023-03-13 16:16:23,774:INFO:Initializing create_model()
+2023-03-13 16:16:23,774:INFO:create_model(estimator=nb, fold=StratifiedKFold(n_splits=10, random_state=None, shuffle=False), round=4, cross_validation=True, predict=True, fit_kwargs={}, groups=None, refit=False, verbose=False, system=False, metrics=None, experiment_custom_tags=None, add_to_model_list=True, probability_threshold=None, display=<pycaret.internal.Display.Display object at 0x00000170E48D3730>, return_train_score=False, kwargs={})
+2023-03-13 16:16:23,774:INFO:Checking exceptions
+2023-03-13 16:16:23,775:INFO:Importing libraries
+2023-03-13 16:16:23,775:INFO:Copying training dataset
+2023-03-13 16:16:23,777:INFO:Defining folds
+2023-03-13 16:16:23,777:INFO:Declaring metric variables
+2023-03-13 16:16:23,787:INFO:Importing untrained model
+2023-03-13 16:16:23,794:INFO:Naive Bayes Imported succesfully
+2023-03-13 16:16:23,810:INFO:Starting cross validation
+2023-03-13 16:16:23,811:INFO:Cross validating with StratifiedKFold(n_splits=10, random_state=None, shuffle=False), n_jobs=-1
+2023-03-13 16:16:23,812:WARNING:create_model() for nb raised an exception or returned all 0.0, trying without fit_kwargs:
+2023-03-13 16:16:23,813:WARNING:Traceback (most recent call last):
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\site-packages\joblib\parallel.py", line 862, in dispatch_one_batch
+    tasks = self._ready_batches.get(block=False)
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\queue.py", line 167, in get
+    raise Empty
+_queue.Empty
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\site-packages\pycaret\internal\tabular.py", line 2203, in compare_models
+    model, model_fit_time = create_model_supervised(**create_model_args)
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\site-packages\pycaret\internal\tabular.py", line 3200, in create_model_supervised
+    scores = cross_validate(
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\site-packages\sklearn\utils\validation.py", line 72, in inner_f
+    return f(**kwargs)
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\site-packages\sklearn\model_selection\_validation.py", line 242, in cross_validate
+    scores = parallel(
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\site-packages\joblib\parallel.py", line 1085, in __call__
+    if self.dispatch_one_batch(iterator):
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\site-packages\joblib\parallel.py", line 873, in dispatch_one_batch
+    islice = list(itertools.islice(iterator, big_batch_size))
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\site-packages\sklearn\model_selection\_validation.py", line 242, in <genexpr>
+    scores = parallel(
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\site-packages\sklearn\model_selection\_split.py", line 336, in split
+    for train, test in super().split(X, y, groups):
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\site-packages\sklearn\model_selection\_split.py", line 80, in split
+    for test_index in self._iter_test_masks(X, y, groups):
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\site-packages\sklearn\model_selection\_split.py", line 697, in _iter_test_masks
+    test_folds = self._make_test_folds(X, y)
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\site-packages\sklearn\model_selection\_split.py", line 666, in _make_test_folds
+    raise ValueError("n_splits=%d cannot be greater than the"
+ValueError: n_splits=10 cannot be greater than the number of members in each class.
+
+2023-03-13 16:16:23,813:INFO:Initializing create_model()
+2023-03-13 16:16:23,813:INFO:create_model(estimator=nb, fold=StratifiedKFold(n_splits=10, random_state=None, shuffle=False), round=4, cross_validation=True, predict=True, fit_kwargs={}, groups=None, refit=False, verbose=False, system=False, metrics=None, experiment_custom_tags=None, add_to_model_list=True, probability_threshold=None, display=<pycaret.internal.Display.Display object at 0x00000170E48D3730>, return_train_score=False, kwargs={})
+2023-03-13 16:16:23,813:INFO:Checking exceptions
+2023-03-13 16:16:23,814:INFO:Importing libraries
+2023-03-13 16:16:23,814:INFO:Copying training dataset
+2023-03-13 16:16:23,814:INFO:Defining folds
+2023-03-13 16:16:23,815:INFO:Declaring metric variables
+2023-03-13 16:16:23,821:INFO:Importing untrained model
+2023-03-13 16:16:23,828:INFO:Naive Bayes Imported succesfully
+2023-03-13 16:16:23,842:INFO:Starting cross validation
+2023-03-13 16:16:23,842:INFO:Cross validating with StratifiedKFold(n_splits=10, random_state=None, shuffle=False), n_jobs=-1
+2023-03-13 16:16:23,845:ERROR:create_model() for nb raised an exception or returned all 0.0:
+2023-03-13 16:16:23,846:ERROR:Traceback (most recent call last):
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\site-packages\joblib\parallel.py", line 862, in dispatch_one_batch
+    tasks = self._ready_batches.get(block=False)
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\queue.py", line 167, in get
+    raise Empty
+_queue.Empty
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\site-packages\pycaret\internal\tabular.py", line 2203, in compare_models
+    model, model_fit_time = create_model_supervised(**create_model_args)
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\site-packages\pycaret\internal\tabular.py", line 3200, in create_model_supervised
+    scores = cross_validate(
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\site-packages\sklearn\utils\validation.py", line 72, in inner_f
+    return f(**kwargs)
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\site-packages\sklearn\model_selection\_validation.py", line 242, in cross_validate
+    scores = parallel(
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\site-packages\joblib\parallel.py", line 1085, in __call__
+    if self.dispatch_one_batch(iterator):
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\site-packages\joblib\parallel.py", line 873, in dispatch_one_batch
+    islice = list(itertools.islice(iterator, big_batch_size))
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\site-packages\sklearn\model_selection\_validation.py", line 242, in <genexpr>
+    scores = parallel(
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\site-packages\sklearn\model_selection\_split.py", line 336, in split
+    for train, test in super().split(X, y, groups):
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\site-packages\sklearn\model_selection\_split.py", line 80, in split
+    for test_index in self._iter_test_masks(X, y, groups):
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\site-packages\sklearn\model_selection\_split.py", line 697, in _iter_test_masks
+    test_folds = self._make_test_folds(X, y)
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\site-packages\sklearn\model_selection\_split.py", line 666, in _make_test_folds
+    raise ValueError("n_splits=%d cannot be greater than the"
+ValueError: n_splits=10 cannot be greater than the number of members in each class.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\site-packages\joblib\parallel.py", line 862, in dispatch_one_batch
+    tasks = self._ready_batches.get(block=False)
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\queue.py", line 167, in get
+    raise Empty
+_queue.Empty
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\site-packages\pycaret\internal\tabular.py", line 2212, in compare_models
+    model, model_fit_time = create_model_supervised(**create_model_args)
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\site-packages\pycaret\internal\tabular.py", line 3200, in create_model_supervised
+    scores = cross_validate(
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\site-packages\sklearn\utils\validation.py", line 72, in inner_f
+    return f(**kwargs)
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\site-packages\sklearn\model_selection\_validation.py", line 242, in cross_validate
+    scores = parallel(
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\site-packages\joblib\parallel.py", line 1085, in __call__
+    if self.dispatch_one_batch(iterator):
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\site-packages\joblib\parallel.py", line 873, in dispatch_one_batch
+    islice = list(itertools.islice(iterator, big_batch_size))
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\site-packages\sklearn\model_selection\_validation.py", line 242, in <genexpr>
+    scores = parallel(
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\site-packages\sklearn\model_selection\_split.py", line 336, in split
+    for train, test in super().split(X, y, groups):
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\site-packages\sklearn\model_selection\_split.py", line 80, in split
+    for test_index in self._iter_test_masks(X, y, groups):
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\site-packages\sklearn\model_selection\_split.py", line 697, in _iter_test_masks
+    test_folds = self._make_test_folds(X, y)
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\site-packages\sklearn\model_selection\_split.py", line 666, in _make_test_folds
+    raise ValueError("n_splits=%d cannot be greater than the"
+ValueError: n_splits=10 cannot be greater than the number of members in each class.
+
+2023-03-13 16:16:23,846:INFO:Initializing Decision Tree Classifier
+2023-03-13 16:16:23,846:INFO:Total runtime is 0.004799699783325196 minutes
+2023-03-13 16:16:23,854:INFO:SubProcess create_model() called ==================================
+2023-03-13 16:16:23,854:INFO:Initializing create_model()
+2023-03-13 16:16:23,854:INFO:create_model(estimator=dt, fold=StratifiedKFold(n_splits=10, random_state=None, shuffle=False), round=4, cross_validation=True, predict=True, fit_kwargs={}, groups=None, refit=False, verbose=False, system=False, metrics=None, experiment_custom_tags=None, add_to_model_list=True, probability_threshold=None, display=<pycaret.internal.Display.Display object at 0x00000170E48D3730>, return_train_score=False, kwargs={})
+2023-03-13 16:16:23,854:INFO:Checking exceptions
+2023-03-13 16:16:23,854:INFO:Importing libraries
+2023-03-13 16:16:23,855:INFO:Copying training dataset
+2023-03-13 16:16:23,856:INFO:Defining folds
+2023-03-13 16:16:23,856:INFO:Declaring metric variables
+2023-03-13 16:16:23,861:INFO:Importing untrained model
+2023-03-13 16:16:23,866:INFO:Decision Tree Classifier Imported succesfully
+2023-03-13 16:16:23,878:INFO:Starting cross validation
+2023-03-13 16:16:23,879:INFO:Cross validating with StratifiedKFold(n_splits=10, random_state=None, shuffle=False), n_jobs=-1
+2023-03-13 16:16:23,882:WARNING:create_model() for dt raised an exception or returned all 0.0, trying without fit_kwargs:
+2023-03-13 16:16:23,882:WARNING:Traceback (most recent call last):
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\site-packages\joblib\parallel.py", line 862, in dispatch_one_batch
+    tasks = self._ready_batches.get(block=False)
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\queue.py", line 167, in get
+    raise Empty
+_queue.Empty
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\site-packages\pycaret\internal\tabular.py", line 2203, in compare_models
+    model, model_fit_time = create_model_supervised(**create_model_args)
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\site-packages\pycaret\internal\tabular.py", line 3200, in create_model_supervised
+    scores = cross_validate(
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\site-packages\sklearn\utils\validation.py", line 72, in inner_f
+    return f(**kwargs)
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\site-packages\sklearn\model_selection\_validation.py", line 242, in cross_validate
+    scores = parallel(
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\site-packages\joblib\parallel.py", line 1085, in __call__
+    if self.dispatch_one_batch(iterator):
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\site-packages\joblib\parallel.py", line 873, in dispatch_one_batch
+    islice = list(itertools.islice(iterator, big_batch_size))
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\site-packages\sklearn\model_selection\_validation.py", line 242, in <genexpr>
+    scores = parallel(
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\site-packages\sklearn\model_selection\_split.py", line 336, in split
+    for train, test in super().split(X, y, groups):
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\site-packages\sklearn\model_selection\_split.py", line 80, in split
+    for test_index in self._iter_test_masks(X, y, groups):
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\site-packages\sklearn\model_selection\_split.py", line 697, in _iter_test_masks
+    test_folds = self._make_test_folds(X, y)
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\site-packages\sklearn\model_selection\_split.py", line 666, in _make_test_folds
+    raise ValueError("n_splits=%d cannot be greater than the"
+ValueError: n_splits=10 cannot be greater than the number of members in each class.
+
+2023-03-13 16:16:23,883:INFO:Initializing create_model()
+2023-03-13 16:16:23,883:INFO:create_model(estimator=dt, fold=StratifiedKFold(n_splits=10, random_state=None, shuffle=False), round=4, cross_validation=True, predict=True, fit_kwargs={}, groups=None, refit=False, verbose=False, system=False, metrics=None, experiment_custom_tags=None, add_to_model_list=True, probability_threshold=None, display=<pycaret.internal.Display.Display object at 0x00000170E48D3730>, return_train_score=False, kwargs={})
+2023-03-13 16:16:23,883:INFO:Checking exceptions
+2023-03-13 16:16:23,883:INFO:Importing libraries
+2023-03-13 16:16:23,883:INFO:Copying training dataset
+2023-03-13 16:16:23,884:INFO:Defining folds
+2023-03-13 16:16:23,884:INFO:Declaring metric variables
+2023-03-13 16:16:23,889:INFO:Importing untrained model
+2023-03-13 16:16:23,895:INFO:Decision Tree Classifier Imported succesfully
+2023-03-13 16:16:23,907:INFO:Starting cross validation
+2023-03-13 16:16:23,907:INFO:Cross validating with StratifiedKFold(n_splits=10, random_state=None, shuffle=False), n_jobs=-1
+2023-03-13 16:16:23,910:ERROR:create_model() for dt raised an exception or returned all 0.0:
+2023-03-13 16:16:23,911:ERROR:Traceback (most recent call last):
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\site-packages\joblib\parallel.py", line 862, in dispatch_one_batch
+    tasks = self._ready_batches.get(block=False)
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\queue.py", line 167, in get
+    raise Empty
+_queue.Empty
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\site-packages\pycaret\internal\tabular.py", line 2203, in compare_models
+    model, model_fit_time = create_model_supervised(**create_model_args)
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\site-packages\pycaret\internal\tabular.py", line 3200, in create_model_supervised
+    scores = cross_validate(
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\site-packages\sklearn\utils\validation.py", line 72, in inner_f
+    return f(**kwargs)
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\site-packages\sklearn\model_selection\_validation.py", line 242, in cross_validate
+    scores = parallel(
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\site-packages\joblib\parallel.py", line 1085, in __call__
+    if self.dispatch_one_batch(iterator):
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\site-packages\joblib\parallel.py", line 873, in dispatch_one_batch
+    islice = list(itertools.islice(iterator, big_batch_size))
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\site-packages\sklearn\model_selection\_validation.py", line 242, in <genexpr>
+    scores = parallel(
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\site-packages\sklearn\model_selection\_split.py", line 336, in split
+    for train, test in super().split(X, y, groups):
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\site-packages\sklearn\model_selection\_split.py", line 80, in split
+    for test_index in self._iter_test_masks(X, y, groups):
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\site-packages\sklearn\model_selection\_split.py", line 697, in _iter_test_masks
+    test_folds = self._make_test_folds(X, y)
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\site-packages\sklearn\model_selection\_split.py", line 666, in _make_test_folds
+    raise ValueError("n_splits=%d cannot be greater than the"
+ValueError: n_splits=10 cannot be greater than the number of members in each class.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\site-packages\joblib\parallel.py", line 862, in dispatch_one_batch
+    tasks = self._ready_batches.get(block=False)
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\queue.py", line 167, in get
+    raise Empty
+_queue.Empty
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\site-packages\pycaret\internal\tabular.py", line 2212, in compare_models
+    model, model_fit_time = create_model_supervised(**create_model_args)
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\site-packages\pycaret\internal\tabular.py", line 3200, in create_model_supervised
+    scores = cross_validate(
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\site-packages\sklearn\utils\validation.py", line 72, in inner_f
+    return f(**kwargs)
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\site-packages\sklearn\model_selection\_validation.py", line 242, in cross_validate
+    scores = parallel(
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\site-packages\joblib\parallel.py", line 1085, in __call__
+    if self.dispatch_one_batch(iterator):
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\site-packages\joblib\parallel.py", line 873, in dispatch_one_batch
+    islice = list(itertools.islice(iterator, big_batch_size))
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\site-packages\sklearn\model_selection\_validation.py", line 242, in <genexpr>
+    scores = parallel(
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\site-packages\sklearn\model_selection\_split.py", line 336, in split
+    for train, test in super().split(X, y, groups):
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\site-packages\sklearn\model_selection\_split.py", line 80, in split
+    for test_index in self._iter_test_masks(X, y, groups):
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\site-packages\sklearn\model_selection\_split.py", line 697, in _iter_test_masks
+    test_folds = self._make_test_folds(X, y)
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\site-packages\sklearn\model_selection\_split.py", line 666, in _make_test_folds
+    raise ValueError("n_splits=%d cannot be greater than the"
+ValueError: n_splits=10 cannot be greater than the number of members in each class.
+
+2023-03-13 16:16:23,911:INFO:Initializing SVM - Linear Kernel
+2023-03-13 16:16:23,911:INFO:Total runtime is 0.005884476502736409 minutes
+2023-03-13 16:16:23,917:INFO:SubProcess create_model() called ==================================
+2023-03-13 16:16:23,917:INFO:Initializing create_model()
+2023-03-13 16:16:23,917:INFO:create_model(estimator=svm, fold=StratifiedKFold(n_splits=10, random_state=None, shuffle=False), round=4, cross_validation=True, predict=True, fit_kwargs={}, groups=None, refit=False, verbose=False, system=False, metrics=None, experiment_custom_tags=None, add_to_model_list=True, probability_threshold=None, display=<pycaret.internal.Display.Display object at 0x00000170E48D3730>, return_train_score=False, kwargs={})
+2023-03-13 16:16:23,917:INFO:Checking exceptions
+2023-03-13 16:16:23,917:INFO:Importing libraries
+2023-03-13 16:16:23,917:INFO:Copying training dataset
+2023-03-13 16:16:23,918:INFO:Defining folds
+2023-03-13 16:16:23,918:INFO:Declaring metric variables
+2023-03-13 16:16:23,925:INFO:Importing untrained model
+2023-03-13 16:16:23,931:INFO:SVM - Linear Kernel Imported succesfully
+2023-03-13 16:16:23,942:INFO:Starting cross validation
+2023-03-13 16:16:23,943:INFO:Cross validating with StratifiedKFold(n_splits=10, random_state=None, shuffle=False), n_jobs=-1
+2023-03-13 16:16:23,944:WARNING:create_model() for svm raised an exception or returned all 0.0, trying without fit_kwargs:
+2023-03-13 16:16:23,945:WARNING:Traceback (most recent call last):
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\site-packages\joblib\parallel.py", line 862, in dispatch_one_batch
+    tasks = self._ready_batches.get(block=False)
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\queue.py", line 167, in get
+    raise Empty
+_queue.Empty
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\site-packages\pycaret\internal\tabular.py", line 2203, in compare_models
+    model, model_fit_time = create_model_supervised(**create_model_args)
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\site-packages\pycaret\internal\tabular.py", line 3200, in create_model_supervised
+    scores = cross_validate(
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\site-packages\sklearn\utils\validation.py", line 72, in inner_f
+    return f(**kwargs)
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\site-packages\sklearn\model_selection\_validation.py", line 242, in cross_validate
+    scores = parallel(
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\site-packages\joblib\parallel.py", line 1085, in __call__
+    if self.dispatch_one_batch(iterator):
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\site-packages\joblib\parallel.py", line 873, in dispatch_one_batch
+    islice = list(itertools.islice(iterator, big_batch_size))
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\site-packages\sklearn\model_selection\_validation.py", line 242, in <genexpr>
+    scores = parallel(
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\site-packages\sklearn\model_selection\_split.py", line 336, in split
+    for train, test in super().split(X, y, groups):
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\site-packages\sklearn\model_selection\_split.py", line 80, in split
+    for test_index in self._iter_test_masks(X, y, groups):
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\site-packages\sklearn\model_selection\_split.py", line 697, in _iter_test_masks
+    test_folds = self._make_test_folds(X, y)
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\site-packages\sklearn\model_selection\_split.py", line 666, in _make_test_folds
+    raise ValueError("n_splits=%d cannot be greater than the"
+ValueError: n_splits=10 cannot be greater than the number of members in each class.
+
+2023-03-13 16:16:23,945:INFO:Initializing create_model()
+2023-03-13 16:16:23,945:INFO:create_model(estimator=svm, fold=StratifiedKFold(n_splits=10, random_state=None, shuffle=False), round=4, cross_validation=True, predict=True, fit_kwargs={}, groups=None, refit=False, verbose=False, system=False, metrics=None, experiment_custom_tags=None, add_to_model_list=True, probability_threshold=None, display=<pycaret.internal.Display.Display object at 0x00000170E48D3730>, return_train_score=False, kwargs={})
+2023-03-13 16:16:23,945:INFO:Checking exceptions
+2023-03-13 16:16:23,945:INFO:Importing libraries
+2023-03-13 16:16:23,945:INFO:Copying training dataset
+2023-03-13 16:16:23,947:INFO:Defining folds
+2023-03-13 16:16:23,947:INFO:Declaring metric variables
+2023-03-13 16:16:23,952:INFO:Importing untrained model
+2023-03-13 16:16:23,959:INFO:SVM - Linear Kernel Imported succesfully
+2023-03-13 16:16:23,972:INFO:Starting cross validation
+2023-03-13 16:16:23,972:INFO:Cross validating with StratifiedKFold(n_splits=10, random_state=None, shuffle=False), n_jobs=-1
+2023-03-13 16:16:23,975:ERROR:create_model() for svm raised an exception or returned all 0.0:
+2023-03-13 16:16:23,976:ERROR:Traceback (most recent call last):
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\site-packages\joblib\parallel.py", line 862, in dispatch_one_batch
+    tasks = self._ready_batches.get(block=False)
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\queue.py", line 167, in get
+    raise Empty
+_queue.Empty
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\site-packages\pycaret\internal\tabular.py", line 2203, in compare_models
+    model, model_fit_time = create_model_supervised(**create_model_args)
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\site-packages\pycaret\internal\tabular.py", line 3200, in create_model_supervised
+    scores = cross_validate(
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\site-packages\sklearn\utils\validation.py", line 72, in inner_f
+    return f(**kwargs)
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\site-packages\sklearn\model_selection\_validation.py", line 242, in cross_validate
+    scores = parallel(
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\site-packages\joblib\parallel.py", line 1085, in __call__
+    if self.dispatch_one_batch(iterator):
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\site-packages\joblib\parallel.py", line 873, in dispatch_one_batch
+    islice = list(itertools.islice(iterator, big_batch_size))
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\site-packages\sklearn\model_selection\_validation.py", line 242, in <genexpr>
+    scores = parallel(
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\site-packages\sklearn\model_selection\_split.py", line 336, in split
+    for train, test in super().split(X, y, groups):
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\site-packages\sklearn\model_selection\_split.py", line 80, in split
+    for test_index in self._iter_test_masks(X, y, groups):
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\site-packages\sklearn\model_selection\_split.py", line 697, in _iter_test_masks
+    test_folds = self._make_test_folds(X, y)
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\site-packages\sklearn\model_selection\_split.py", line 666, in _make_test_folds
+    raise ValueError("n_splits=%d cannot be greater than the"
+ValueError: n_splits=10 cannot be greater than the number of members in each class.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\site-packages\joblib\parallel.py", line 862, in dispatch_one_batch
+    tasks = self._ready_batches.get(block=False)
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\queue.py", line 167, in get
+    raise Empty
+_queue.Empty
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\site-packages\pycaret\internal\tabular.py", line 2212, in compare_models
+    model, model_fit_time = create_model_supervised(**create_model_args)
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\site-packages\pycaret\internal\tabular.py", line 3200, in create_model_supervised
+    scores = cross_validate(
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\site-packages\sklearn\utils\validation.py", line 72, in inner_f
+    return f(**kwargs)
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\site-packages\sklearn\model_selection\_validation.py", line 242, in cross_validate
+    scores = parallel(
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\site-packages\joblib\parallel.py", line 1085, in __call__
+    if self.dispatch_one_batch(iterator):
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\site-packages\joblib\parallel.py", line 873, in dispatch_one_batch
+    islice = list(itertools.islice(iterator, big_batch_size))
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\site-packages\sklearn\model_selection\_validation.py", line 242, in <genexpr>
+    scores = parallel(
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\site-packages\sklearn\model_selection\_split.py", line 336, in split
+    for train, test in super().split(X, y, groups):
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\site-packages\sklearn\model_selection\_split.py", line 80, in split
+    for test_index in self._iter_test_masks(X, y, groups):
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\site-packages\sklearn\model_selection\_split.py", line 697, in _iter_test_masks
+    test_folds = self._make_test_folds(X, y)
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\site-packages\sklearn\model_selection\_split.py", line 666, in _make_test_folds
+    raise ValueError("n_splits=%d cannot be greater than the"
+ValueError: n_splits=10 cannot be greater than the number of members in each class.
+
+2023-03-13 16:16:23,976:INFO:Initializing Ridge Classifier
+2023-03-13 16:16:23,976:INFO:Total runtime is 0.006969738006591797 minutes
+2023-03-13 16:16:23,982:INFO:SubProcess create_model() called ==================================
+2023-03-13 16:16:23,982:INFO:Initializing create_model()
+2023-03-13 16:16:23,982:INFO:create_model(estimator=ridge, fold=StratifiedKFold(n_splits=10, random_state=None, shuffle=False), round=4, cross_validation=True, predict=True, fit_kwargs={}, groups=None, refit=False, verbose=False, system=False, metrics=None, experiment_custom_tags=None, add_to_model_list=True, probability_threshold=None, display=<pycaret.internal.Display.Display object at 0x00000170E48D3730>, return_train_score=False, kwargs={})
+2023-03-13 16:16:23,982:INFO:Checking exceptions
+2023-03-13 16:16:23,982:INFO:Importing libraries
+2023-03-13 16:16:23,982:INFO:Copying training dataset
+2023-03-13 16:16:23,984:INFO:Defining folds
+2023-03-13 16:16:23,984:INFO:Declaring metric variables
+2023-03-13 16:16:23,990:INFO:Importing untrained model
+2023-03-13 16:16:23,995:INFO:Ridge Classifier Imported succesfully
+2023-03-13 16:16:24,009:INFO:Starting cross validation
+2023-03-13 16:16:24,009:INFO:Cross validating with StratifiedKFold(n_splits=10, random_state=None, shuffle=False), n_jobs=-1
+2023-03-13 16:16:24,011:WARNING:create_model() for ridge raised an exception or returned all 0.0, trying without fit_kwargs:
+2023-03-13 16:16:24,012:WARNING:Traceback (most recent call last):
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\site-packages\joblib\parallel.py", line 862, in dispatch_one_batch
+    tasks = self._ready_batches.get(block=False)
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\queue.py", line 167, in get
+    raise Empty
+_queue.Empty
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\site-packages\pycaret\internal\tabular.py", line 2203, in compare_models
+    model, model_fit_time = create_model_supervised(**create_model_args)
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\site-packages\pycaret\internal\tabular.py", line 3200, in create_model_supervised
+    scores = cross_validate(
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\site-packages\sklearn\utils\validation.py", line 72, in inner_f
+    return f(**kwargs)
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\site-packages\sklearn\model_selection\_validation.py", line 242, in cross_validate
+    scores = parallel(
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\site-packages\joblib\parallel.py", line 1085, in __call__
+    if self.dispatch_one_batch(iterator):
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\site-packages\joblib\parallel.py", line 873, in dispatch_one_batch
+    islice = list(itertools.islice(iterator, big_batch_size))
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\site-packages\sklearn\model_selection\_validation.py", line 242, in <genexpr>
+    scores = parallel(
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\site-packages\sklearn\model_selection\_split.py", line 336, in split
+    for train, test in super().split(X, y, groups):
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\site-packages\sklearn\model_selection\_split.py", line 80, in split
+    for test_index in self._iter_test_masks(X, y, groups):
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\site-packages\sklearn\model_selection\_split.py", line 697, in _iter_test_masks
+    test_folds = self._make_test_folds(X, y)
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\site-packages\sklearn\model_selection\_split.py", line 666, in _make_test_folds
+    raise ValueError("n_splits=%d cannot be greater than the"
+ValueError: n_splits=10 cannot be greater than the number of members in each class.
+
+2023-03-13 16:16:24,012:INFO:Initializing create_model()
+2023-03-13 16:16:24,012:INFO:create_model(estimator=ridge, fold=StratifiedKFold(n_splits=10, random_state=None, shuffle=False), round=4, cross_validation=True, predict=True, fit_kwargs={}, groups=None, refit=False, verbose=False, system=False, metrics=None, experiment_custom_tags=None, add_to_model_list=True, probability_threshold=None, display=<pycaret.internal.Display.Display object at 0x00000170E48D3730>, return_train_score=False, kwargs={})
+2023-03-13 16:16:24,012:INFO:Checking exceptions
+2023-03-13 16:16:24,012:INFO:Importing libraries
+2023-03-13 16:16:24,012:INFO:Copying training dataset
+2023-03-13 16:16:24,013:INFO:Defining folds
+2023-03-13 16:16:24,013:INFO:Declaring metric variables
+2023-03-13 16:16:24,020:INFO:Importing untrained model
+2023-03-13 16:16:24,026:INFO:Ridge Classifier Imported succesfully
+2023-03-13 16:16:24,040:INFO:Starting cross validation
+2023-03-13 16:16:24,040:INFO:Cross validating with StratifiedKFold(n_splits=10, random_state=None, shuffle=False), n_jobs=-1
+2023-03-13 16:16:24,042:ERROR:create_model() for ridge raised an exception or returned all 0.0:
+2023-03-13 16:16:24,043:ERROR:Traceback (most recent call last):
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\site-packages\joblib\parallel.py", line 862, in dispatch_one_batch
+    tasks = self._ready_batches.get(block=False)
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\queue.py", line 167, in get
+    raise Empty
+_queue.Empty
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\site-packages\pycaret\internal\tabular.py", line 2203, in compare_models
+    model, model_fit_time = create_model_supervised(**create_model_args)
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\site-packages\pycaret\internal\tabular.py", line 3200, in create_model_supervised
+    scores = cross_validate(
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\site-packages\sklearn\utils\validation.py", line 72, in inner_f
+    return f(**kwargs)
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\site-packages\sklearn\model_selection\_validation.py", line 242, in cross_validate
+    scores = parallel(
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\site-packages\joblib\parallel.py", line 1085, in __call__
+    if self.dispatch_one_batch(iterator):
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\site-packages\joblib\parallel.py", line 873, in dispatch_one_batch
+    islice = list(itertools.islice(iterator, big_batch_size))
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\site-packages\sklearn\model_selection\_validation.py", line 242, in <genexpr>
+    scores = parallel(
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\site-packages\sklearn\model_selection\_split.py", line 336, in split
+    for train, test in super().split(X, y, groups):
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\site-packages\sklearn\model_selection\_split.py", line 80, in split
+    for test_index in self._iter_test_masks(X, y, groups):
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\site-packages\sklearn\model_selection\_split.py", line 697, in _iter_test_masks
+    test_folds = self._make_test_folds(X, y)
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\site-packages\sklearn\model_selection\_split.py", line 666, in _make_test_folds
+    raise ValueError("n_splits=%d cannot be greater than the"
+ValueError: n_splits=10 cannot be greater than the number of members in each class.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\site-packages\joblib\parallel.py", line 862, in dispatch_one_batch
+    tasks = self._ready_batches.get(block=False)
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\queue.py", line 167, in get
+    raise Empty
+_queue.Empty
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\site-packages\pycaret\internal\tabular.py", line 2212, in compare_models
+    model, model_fit_time = create_model_supervised(**create_model_args)
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\site-packages\pycaret\internal\tabular.py", line 3200, in create_model_supervised
+    scores = cross_validate(
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\site-packages\sklearn\utils\validation.py", line 72, in inner_f
+    return f(**kwargs)
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\site-packages\sklearn\model_selection\_validation.py", line 242, in cross_validate
+    scores = parallel(
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\site-packages\joblib\parallel.py", line 1085, in __call__
+    if self.dispatch_one_batch(iterator):
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\site-packages\joblib\parallel.py", line 873, in dispatch_one_batch
+    islice = list(itertools.islice(iterator, big_batch_size))
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\site-packages\sklearn\model_selection\_validation.py", line 242, in <genexpr>
+    scores = parallel(
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\site-packages\sklearn\model_selection\_split.py", line 336, in split
+    for train, test in super().split(X, y, groups):
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\site-packages\sklearn\model_selection\_split.py", line 80, in split
+    for test_index in self._iter_test_masks(X, y, groups):
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\site-packages\sklearn\model_selection\_split.py", line 697, in _iter_test_masks
+    test_folds = self._make_test_folds(X, y)
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\site-packages\sklearn\model_selection\_split.py", line 666, in _make_test_folds
+    raise ValueError("n_splits=%d cannot be greater than the"
+ValueError: n_splits=10 cannot be greater than the number of members in each class.
+
+2023-03-13 16:16:24,043:INFO:Initializing Random Forest Classifier
+2023-03-13 16:16:24,043:INFO:Total runtime is 0.008093976974487304 minutes
+2023-03-13 16:16:24,050:INFO:SubProcess create_model() called ==================================
+2023-03-13 16:16:24,050:INFO:Initializing create_model()
+2023-03-13 16:16:24,050:INFO:create_model(estimator=rf, fold=StratifiedKFold(n_splits=10, random_state=None, shuffle=False), round=4, cross_validation=True, predict=True, fit_kwargs={}, groups=None, refit=False, verbose=False, system=False, metrics=None, experiment_custom_tags=None, add_to_model_list=True, probability_threshold=None, display=<pycaret.internal.Display.Display object at 0x00000170E48D3730>, return_train_score=False, kwargs={})
+2023-03-13 16:16:24,050:INFO:Checking exceptions
+2023-03-13 16:16:24,050:INFO:Importing libraries
+2023-03-13 16:16:24,050:INFO:Copying training dataset
+2023-03-13 16:16:24,051:INFO:Defining folds
+2023-03-13 16:16:24,051:INFO:Declaring metric variables
+2023-03-13 16:16:24,056:INFO:Importing untrained model
+2023-03-13 16:16:24,062:INFO:Random Forest Classifier Imported succesfully
+2023-03-13 16:16:24,075:INFO:Starting cross validation
+2023-03-13 16:16:24,075:INFO:Cross validating with StratifiedKFold(n_splits=10, random_state=None, shuffle=False), n_jobs=-1
+2023-03-13 16:16:24,078:WARNING:create_model() for rf raised an exception or returned all 0.0, trying without fit_kwargs:
+2023-03-13 16:16:24,078:WARNING:Traceback (most recent call last):
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\site-packages\joblib\parallel.py", line 862, in dispatch_one_batch
+    tasks = self._ready_batches.get(block=False)
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\queue.py", line 167, in get
+    raise Empty
+_queue.Empty
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\site-packages\pycaret\internal\tabular.py", line 2203, in compare_models
+    model, model_fit_time = create_model_supervised(**create_model_args)
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\site-packages\pycaret\internal\tabular.py", line 3200, in create_model_supervised
+    scores = cross_validate(
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\site-packages\sklearn\utils\validation.py", line 72, in inner_f
+    return f(**kwargs)
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\site-packages\sklearn\model_selection\_validation.py", line 242, in cross_validate
+    scores = parallel(
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\site-packages\joblib\parallel.py", line 1085, in __call__
+    if self.dispatch_one_batch(iterator):
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\site-packages\joblib\parallel.py", line 873, in dispatch_one_batch
+    islice = list(itertools.islice(iterator, big_batch_size))
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\site-packages\sklearn\model_selection\_validation.py", line 242, in <genexpr>
+    scores = parallel(
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\site-packages\sklearn\model_selection\_split.py", line 336, in split
+    for train, test in super().split(X, y, groups):
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\site-packages\sklearn\model_selection\_split.py", line 80, in split
+    for test_index in self._iter_test_masks(X, y, groups):
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\site-packages\sklearn\model_selection\_split.py", line 697, in _iter_test_masks
+    test_folds = self._make_test_folds(X, y)
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\site-packages\sklearn\model_selection\_split.py", line 666, in _make_test_folds
+    raise ValueError("n_splits=%d cannot be greater than the"
+ValueError: n_splits=10 cannot be greater than the number of members in each class.
+
+2023-03-13 16:16:24,078:INFO:Initializing create_model()
+2023-03-13 16:16:24,078:INFO:create_model(estimator=rf, fold=StratifiedKFold(n_splits=10, random_state=None, shuffle=False), round=4, cross_validation=True, predict=True, fit_kwargs={}, groups=None, refit=False, verbose=False, system=False, metrics=None, experiment_custom_tags=None, add_to_model_list=True, probability_threshold=None, display=<pycaret.internal.Display.Display object at 0x00000170E48D3730>, return_train_score=False, kwargs={})
+2023-03-13 16:16:24,078:INFO:Checking exceptions
+2023-03-13 16:16:24,078:INFO:Importing libraries
+2023-03-13 16:16:24,078:INFO:Copying training dataset
+2023-03-13 16:16:24,079:INFO:Defining folds
+2023-03-13 16:16:24,079:INFO:Declaring metric variables
+2023-03-13 16:16:24,085:INFO:Importing untrained model
+2023-03-13 16:16:24,091:INFO:Random Forest Classifier Imported succesfully
+2023-03-13 16:16:24,106:INFO:Starting cross validation
+2023-03-13 16:16:24,107:INFO:Cross validating with StratifiedKFold(n_splits=10, random_state=None, shuffle=False), n_jobs=-1
+2023-03-13 16:16:24,346:ERROR:create_model() for rf raised an exception or returned all 0.0:
+2023-03-13 16:16:24,347:ERROR:Traceback (most recent call last):
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\site-packages\joblib\parallel.py", line 862, in dispatch_one_batch
+    tasks = self._ready_batches.get(block=False)
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\queue.py", line 167, in get
+    raise Empty
+_queue.Empty
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\site-packages\pycaret\internal\tabular.py", line 2203, in compare_models
+    model, model_fit_time = create_model_supervised(**create_model_args)
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\site-packages\pycaret\internal\tabular.py", line 3200, in create_model_supervised
+    scores = cross_validate(
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\site-packages\sklearn\utils\validation.py", line 72, in inner_f
+    return f(**kwargs)
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\site-packages\sklearn\model_selection\_validation.py", line 242, in cross_validate
+    scores = parallel(
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\site-packages\joblib\parallel.py", line 1085, in __call__
+    if self.dispatch_one_batch(iterator):
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\site-packages\joblib\parallel.py", line 873, in dispatch_one_batch
+    islice = list(itertools.islice(iterator, big_batch_size))
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\site-packages\sklearn\model_selection\_validation.py", line 242, in <genexpr>
+    scores = parallel(
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\site-packages\sklearn\model_selection\_split.py", line 336, in split
+    for train, test in super().split(X, y, groups):
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\site-packages\sklearn\model_selection\_split.py", line 80, in split
+    for test_index in self._iter_test_masks(X, y, groups):
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\site-packages\sklearn\model_selection\_split.py", line 697, in _iter_test_masks
+    test_folds = self._make_test_folds(X, y)
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\site-packages\sklearn\model_selection\_split.py", line 666, in _make_test_folds
+    raise ValueError("n_splits=%d cannot be greater than the"
+ValueError: n_splits=10 cannot be greater than the number of members in each class.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\site-packages\joblib\parallel.py", line 862, in dispatch_one_batch
+    tasks = self._ready_batches.get(block=False)
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\queue.py", line 167, in get
+    raise Empty
+_queue.Empty
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\site-packages\pycaret\internal\tabular.py", line 2212, in compare_models
+    model, model_fit_time = create_model_supervised(**create_model_args)
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\site-packages\pycaret\internal\tabular.py", line 3200, in create_model_supervised
+    scores = cross_validate(
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\site-packages\sklearn\utils\validation.py", line 72, in inner_f
+    return f(**kwargs)
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\site-packages\sklearn\model_selection\_validation.py", line 242, in cross_validate
+    scores = parallel(
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\site-packages\joblib\parallel.py", line 1085, in __call__
+    if self.dispatch_one_batch(iterator):
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\site-packages\joblib\parallel.py", line 873, in dispatch_one_batch
+    islice = list(itertools.islice(iterator, big_batch_size))
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\site-packages\sklearn\model_selection\_validation.py", line 242, in <genexpr>
+    scores = parallel(
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\site-packages\sklearn\model_selection\_split.py", line 336, in split
+    for train, test in super().split(X, y, groups):
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\site-packages\sklearn\model_selection\_split.py", line 80, in split
+    for test_index in self._iter_test_masks(X, y, groups):
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\site-packages\sklearn\model_selection\_split.py", line 697, in _iter_test_masks
+    test_folds = self._make_test_folds(X, y)
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\site-packages\sklearn\model_selection\_split.py", line 666, in _make_test_folds
+    raise ValueError("n_splits=%d cannot be greater than the"
+ValueError: n_splits=10 cannot be greater than the number of members in each class.
+
+2023-03-13 16:16:24,347:INFO:Initializing Quadratic Discriminant Analysis
+2023-03-13 16:16:24,347:INFO:Total runtime is 0.013153588771820067 minutes
+2023-03-13 16:16:24,352:INFO:SubProcess create_model() called ==================================
+2023-03-13 16:16:24,353:INFO:Initializing create_model()
+2023-03-13 16:16:24,353:INFO:create_model(estimator=qda, fold=StratifiedKFold(n_splits=10, random_state=None, shuffle=False), round=4, cross_validation=True, predict=True, fit_kwargs={}, groups=None, refit=False, verbose=False, system=False, metrics=None, experiment_custom_tags=None, add_to_model_list=True, probability_threshold=None, display=<pycaret.internal.Display.Display object at 0x00000170E48D3730>, return_train_score=False, kwargs={})
+2023-03-13 16:16:24,353:INFO:Checking exceptions
+2023-03-13 16:16:24,353:INFO:Importing libraries
+2023-03-13 16:16:24,353:INFO:Copying training dataset
+2023-03-13 16:16:24,355:INFO:Defining folds
+2023-03-13 16:16:24,355:INFO:Declaring metric variables
+2023-03-13 16:16:24,360:INFO:Importing untrained model
+2023-03-13 16:16:24,367:INFO:Quadratic Discriminant Analysis Imported succesfully
+2023-03-13 16:16:24,378:INFO:Starting cross validation
+2023-03-13 16:16:24,378:INFO:Cross validating with StratifiedKFold(n_splits=10, random_state=None, shuffle=False), n_jobs=-1
+2023-03-13 16:16:24,381:WARNING:create_model() for qda raised an exception or returned all 0.0, trying without fit_kwargs:
+2023-03-13 16:16:24,381:WARNING:Traceback (most recent call last):
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\site-packages\joblib\parallel.py", line 862, in dispatch_one_batch
+    tasks = self._ready_batches.get(block=False)
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\queue.py", line 167, in get
+    raise Empty
+_queue.Empty
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\site-packages\pycaret\internal\tabular.py", line 2203, in compare_models
+    model, model_fit_time = create_model_supervised(**create_model_args)
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\site-packages\pycaret\internal\tabular.py", line 3200, in create_model_supervised
+    scores = cross_validate(
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\site-packages\sklearn\utils\validation.py", line 72, in inner_f
+    return f(**kwargs)
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\site-packages\sklearn\model_selection\_validation.py", line 242, in cross_validate
+    scores = parallel(
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\site-packages\joblib\parallel.py", line 1085, in __call__
+    if self.dispatch_one_batch(iterator):
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\site-packages\joblib\parallel.py", line 873, in dispatch_one_batch
+    islice = list(itertools.islice(iterator, big_batch_size))
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\site-packages\sklearn\model_selection\_validation.py", line 242, in <genexpr>
+    scores = parallel(
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\site-packages\sklearn\model_selection\_split.py", line 336, in split
+    for train, test in super().split(X, y, groups):
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\site-packages\sklearn\model_selection\_split.py", line 80, in split
+    for test_index in self._iter_test_masks(X, y, groups):
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\site-packages\sklearn\model_selection\_split.py", line 697, in _iter_test_masks
+    test_folds = self._make_test_folds(X, y)
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\site-packages\sklearn\model_selection\_split.py", line 666, in _make_test_folds
+    raise ValueError("n_splits=%d cannot be greater than the"
+ValueError: n_splits=10 cannot be greater than the number of members in each class.
+
+2023-03-13 16:16:24,382:INFO:Initializing create_model()
+2023-03-13 16:16:24,382:INFO:create_model(estimator=qda, fold=StratifiedKFold(n_splits=10, random_state=None, shuffle=False), round=4, cross_validation=True, predict=True, fit_kwargs={}, groups=None, refit=False, verbose=False, system=False, metrics=None, experiment_custom_tags=None, add_to_model_list=True, probability_threshold=None, display=<pycaret.internal.Display.Display object at 0x00000170E48D3730>, return_train_score=False, kwargs={})
+2023-03-13 16:16:24,382:INFO:Checking exceptions
+2023-03-13 16:16:24,382:INFO:Importing libraries
+2023-03-13 16:16:24,382:INFO:Copying training dataset
+2023-03-13 16:16:24,382:INFO:Defining folds
+2023-03-13 16:16:24,382:INFO:Declaring metric variables
+2023-03-13 16:16:24,388:INFO:Importing untrained model
+2023-03-13 16:16:24,398:INFO:Quadratic Discriminant Analysis Imported succesfully
+2023-03-13 16:16:24,410:INFO:Starting cross validation
+2023-03-13 16:16:24,410:INFO:Cross validating with StratifiedKFold(n_splits=10, random_state=None, shuffle=False), n_jobs=-1
+2023-03-13 16:16:24,412:ERROR:create_model() for qda raised an exception or returned all 0.0:
+2023-03-13 16:16:24,413:ERROR:Traceback (most recent call last):
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\site-packages\joblib\parallel.py", line 862, in dispatch_one_batch
+    tasks = self._ready_batches.get(block=False)
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\queue.py", line 167, in get
+    raise Empty
+_queue.Empty
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\site-packages\pycaret\internal\tabular.py", line 2203, in compare_models
+    model, model_fit_time = create_model_supervised(**create_model_args)
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\site-packages\pycaret\internal\tabular.py", line 3200, in create_model_supervised
+    scores = cross_validate(
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\site-packages\sklearn\utils\validation.py", line 72, in inner_f
+    return f(**kwargs)
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\site-packages\sklearn\model_selection\_validation.py", line 242, in cross_validate
+    scores = parallel(
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\site-packages\joblib\parallel.py", line 1085, in __call__
+    if self.dispatch_one_batch(iterator):
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\site-packages\joblib\parallel.py", line 873, in dispatch_one_batch
+    islice = list(itertools.islice(iterator, big_batch_size))
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\site-packages\sklearn\model_selection\_validation.py", line 242, in <genexpr>
+    scores = parallel(
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\site-packages\sklearn\model_selection\_split.py", line 336, in split
+    for train, test in super().split(X, y, groups):
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\site-packages\sklearn\model_selection\_split.py", line 80, in split
+    for test_index in self._iter_test_masks(X, y, groups):
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\site-packages\sklearn\model_selection\_split.py", line 697, in _iter_test_masks
+    test_folds = self._make_test_folds(X, y)
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\site-packages\sklearn\model_selection\_split.py", line 666, in _make_test_folds
+    raise ValueError("n_splits=%d cannot be greater than the"
+ValueError: n_splits=10 cannot be greater than the number of members in each class.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\site-packages\joblib\parallel.py", line 862, in dispatch_one_batch
+    tasks = self._ready_batches.get(block=False)
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\queue.py", line 167, in get
+    raise Empty
+_queue.Empty
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\site-packages\pycaret\internal\tabular.py", line 2212, in compare_models
+    model, model_fit_time = create_model_supervised(**create_model_args)
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\site-packages\pycaret\internal\tabular.py", line 3200, in create_model_supervised
+    scores = cross_validate(
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\site-packages\sklearn\utils\validation.py", line 72, in inner_f
+    return f(**kwargs)
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\site-packages\sklearn\model_selection\_validation.py", line 242, in cross_validate
+    scores = parallel(
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\site-packages\joblib\parallel.py", line 1085, in __call__
+    if self.dispatch_one_batch(iterator):
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\site-packages\joblib\parallel.py", line 873, in dispatch_one_batch
+    islice = list(itertools.islice(iterator, big_batch_size))
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\site-packages\sklearn\model_selection\_validation.py", line 242, in <genexpr>
+    scores = parallel(
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\site-packages\sklearn\model_selection\_split.py", line 336, in split
+    for train, test in super().split(X, y, groups):
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\site-packages\sklearn\model_selection\_split.py", line 80, in split
+    for test_index in self._iter_test_masks(X, y, groups):
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\site-packages\sklearn\model_selection\_split.py", line 697, in _iter_test_masks
+    test_folds = self._make_test_folds(X, y)
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\site-packages\sklearn\model_selection\_split.py", line 666, in _make_test_folds
+    raise ValueError("n_splits=%d cannot be greater than the"
+ValueError: n_splits=10 cannot be greater than the number of members in each class.
+
+2023-03-13 16:16:24,413:INFO:Initializing Ada Boost Classifier
+2023-03-13 16:16:24,413:INFO:Total runtime is 0.014250957965850828 minutes
+2023-03-13 16:16:24,419:INFO:SubProcess create_model() called ==================================
+2023-03-13 16:16:24,419:INFO:Initializing create_model()
+2023-03-13 16:16:24,420:INFO:create_model(estimator=ada, fold=StratifiedKFold(n_splits=10, random_state=None, shuffle=False), round=4, cross_validation=True, predict=True, fit_kwargs={}, groups=None, refit=False, verbose=False, system=False, metrics=None, experiment_custom_tags=None, add_to_model_list=True, probability_threshold=None, display=<pycaret.internal.Display.Display object at 0x00000170E48D3730>, return_train_score=False, kwargs={})
+2023-03-13 16:16:24,420:INFO:Checking exceptions
+2023-03-13 16:16:24,420:INFO:Importing libraries
+2023-03-13 16:16:24,420:INFO:Copying training dataset
+2023-03-13 16:16:24,420:INFO:Defining folds
+2023-03-13 16:16:24,421:INFO:Declaring metric variables
+2023-03-13 16:16:24,425:INFO:Importing untrained model
+2023-03-13 16:16:24,430:INFO:Ada Boost Classifier Imported succesfully
+2023-03-13 16:16:24,442:INFO:Starting cross validation
+2023-03-13 16:16:24,442:INFO:Cross validating with StratifiedKFold(n_splits=10, random_state=None, shuffle=False), n_jobs=-1
+2023-03-13 16:16:24,444:WARNING:create_model() for ada raised an exception or returned all 0.0, trying without fit_kwargs:
+2023-03-13 16:16:24,444:WARNING:Traceback (most recent call last):
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\site-packages\joblib\parallel.py", line 862, in dispatch_one_batch
+    tasks = self._ready_batches.get(block=False)
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\queue.py", line 167, in get
+    raise Empty
+_queue.Empty
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\site-packages\pycaret\internal\tabular.py", line 2203, in compare_models
+    model, model_fit_time = create_model_supervised(**create_model_args)
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\site-packages\pycaret\internal\tabular.py", line 3200, in create_model_supervised
+    scores = cross_validate(
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\site-packages\sklearn\utils\validation.py", line 72, in inner_f
+    return f(**kwargs)
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\site-packages\sklearn\model_selection\_validation.py", line 242, in cross_validate
+    scores = parallel(
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\site-packages\joblib\parallel.py", line 1085, in __call__
+    if self.dispatch_one_batch(iterator):
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\site-packages\joblib\parallel.py", line 873, in dispatch_one_batch
+    islice = list(itertools.islice(iterator, big_batch_size))
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\site-packages\sklearn\model_selection\_validation.py", line 242, in <genexpr>
+    scores = parallel(
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\site-packages\sklearn\model_selection\_split.py", line 336, in split
+    for train, test in super().split(X, y, groups):
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\site-packages\sklearn\model_selection\_split.py", line 80, in split
+    for test_index in self._iter_test_masks(X, y, groups):
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\site-packages\sklearn\model_selection\_split.py", line 697, in _iter_test_masks
+    test_folds = self._make_test_folds(X, y)
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\site-packages\sklearn\model_selection\_split.py", line 666, in _make_test_folds
+    raise ValueError("n_splits=%d cannot be greater than the"
+ValueError: n_splits=10 cannot be greater than the number of members in each class.
+
+2023-03-13 16:16:24,444:INFO:Initializing create_model()
+2023-03-13 16:16:24,444:INFO:create_model(estimator=ada, fold=StratifiedKFold(n_splits=10, random_state=None, shuffle=False), round=4, cross_validation=True, predict=True, fit_kwargs={}, groups=None, refit=False, verbose=False, system=False, metrics=None, experiment_custom_tags=None, add_to_model_list=True, probability_threshold=None, display=<pycaret.internal.Display.Display object at 0x00000170E48D3730>, return_train_score=False, kwargs={})
+2023-03-13 16:16:24,444:INFO:Checking exceptions
+2023-03-13 16:16:24,445:INFO:Importing libraries
+2023-03-13 16:16:24,445:INFO:Copying training dataset
+2023-03-13 16:16:24,445:INFO:Defining folds
+2023-03-13 16:16:24,445:INFO:Declaring metric variables
+2023-03-13 16:16:24,450:INFO:Importing untrained model
+2023-03-13 16:16:24,456:INFO:Ada Boost Classifier Imported succesfully
+2023-03-13 16:16:24,470:INFO:Starting cross validation
+2023-03-13 16:16:24,470:INFO:Cross validating with StratifiedKFold(n_splits=10, random_state=None, shuffle=False), n_jobs=-1
+2023-03-13 16:16:24,472:ERROR:create_model() for ada raised an exception or returned all 0.0:
+2023-03-13 16:16:24,472:ERROR:Traceback (most recent call last):
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\site-packages\joblib\parallel.py", line 862, in dispatch_one_batch
+    tasks = self._ready_batches.get(block=False)
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\queue.py", line 167, in get
+    raise Empty
+_queue.Empty
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\site-packages\pycaret\internal\tabular.py", line 2203, in compare_models
+    model, model_fit_time = create_model_supervised(**create_model_args)
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\site-packages\pycaret\internal\tabular.py", line 3200, in create_model_supervised
+    scores = cross_validate(
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\site-packages\sklearn\utils\validation.py", line 72, in inner_f
+    return f(**kwargs)
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\site-packages\sklearn\model_selection\_validation.py", line 242, in cross_validate
+    scores = parallel(
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\site-packages\joblib\parallel.py", line 1085, in __call__
+    if self.dispatch_one_batch(iterator):
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\site-packages\joblib\parallel.py", line 873, in dispatch_one_batch
+    islice = list(itertools.islice(iterator, big_batch_size))
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\site-packages\sklearn\model_selection\_validation.py", line 242, in <genexpr>
+    scores = parallel(
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\site-packages\sklearn\model_selection\_split.py", line 336, in split
+    for train, test in super().split(X, y, groups):
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\site-packages\sklearn\model_selection\_split.py", line 80, in split
+    for test_index in self._iter_test_masks(X, y, groups):
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\site-packages\sklearn\model_selection\_split.py", line 697, in _iter_test_masks
+    test_folds = self._make_test_folds(X, y)
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\site-packages\sklearn\model_selection\_split.py", line 666, in _make_test_folds
+    raise ValueError("n_splits=%d cannot be greater than the"
+ValueError: n_splits=10 cannot be greater than the number of members in each class.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\site-packages\joblib\parallel.py", line 862, in dispatch_one_batch
+    tasks = self._ready_batches.get(block=False)
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\queue.py", line 167, in get
+    raise Empty
+_queue.Empty
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\site-packages\pycaret\internal\tabular.py", line 2212, in compare_models
+    model, model_fit_time = create_model_supervised(**create_model_args)
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\site-packages\pycaret\internal\tabular.py", line 3200, in create_model_supervised
+    scores = cross_validate(
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\site-packages\sklearn\utils\validation.py", line 72, in inner_f
+    return f(**kwargs)
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\site-packages\sklearn\model_selection\_validation.py", line 242, in cross_validate
+    scores = parallel(
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\site-packages\joblib\parallel.py", line 1085, in __call__
+    if self.dispatch_one_batch(iterator):
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\site-packages\joblib\parallel.py", line 873, in dispatch_one_batch
+    islice = list(itertools.islice(iterator, big_batch_size))
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\site-packages\sklearn\model_selection\_validation.py", line 242, in <genexpr>
+    scores = parallel(
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\site-packages\sklearn\model_selection\_split.py", line 336, in split
+    for train, test in super().split(X, y, groups):
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\site-packages\sklearn\model_selection\_split.py", line 80, in split
+    for test_index in self._iter_test_masks(X, y, groups):
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\site-packages\sklearn\model_selection\_split.py", line 697, in _iter_test_masks
+    test_folds = self._make_test_folds(X, y)
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\site-packages\sklearn\model_selection\_split.py", line 666, in _make_test_folds
+    raise ValueError("n_splits=%d cannot be greater than the"
+ValueError: n_splits=10 cannot be greater than the number of members in each class.
+
+2023-03-13 16:16:24,472:INFO:Initializing Gradient Boosting Classifier
+2023-03-13 16:16:24,472:INFO:Total runtime is 0.015235551198323566 minutes
+2023-03-13 16:16:24,477:INFO:SubProcess create_model() called ==================================
+2023-03-13 16:16:24,477:INFO:Initializing create_model()
+2023-03-13 16:16:24,477:INFO:create_model(estimator=gbc, fold=StratifiedKFold(n_splits=10, random_state=None, shuffle=False), round=4, cross_validation=True, predict=True, fit_kwargs={}, groups=None, refit=False, verbose=False, system=False, metrics=None, experiment_custom_tags=None, add_to_model_list=True, probability_threshold=None, display=<pycaret.internal.Display.Display object at 0x00000170E48D3730>, return_train_score=False, kwargs={})
+2023-03-13 16:16:24,478:INFO:Checking exceptions
+2023-03-13 16:16:24,478:INFO:Importing libraries
+2023-03-13 16:16:24,478:INFO:Copying training dataset
+2023-03-13 16:16:24,481:INFO:Defining folds
+2023-03-13 16:16:24,481:INFO:Declaring metric variables
+2023-03-13 16:16:24,498:INFO:Importing untrained model
+2023-03-13 16:16:24,520:INFO:Gradient Boosting Classifier Imported succesfully
+2023-03-13 16:16:24,539:INFO:Starting cross validation
+2023-03-13 16:16:24,539:INFO:Cross validating with StratifiedKFold(n_splits=10, random_state=None, shuffle=False), n_jobs=-1
+2023-03-13 16:16:24,541:WARNING:create_model() for gbc raised an exception or returned all 0.0, trying without fit_kwargs:
+2023-03-13 16:16:24,541:WARNING:Traceback (most recent call last):
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\site-packages\joblib\parallel.py", line 862, in dispatch_one_batch
+    tasks = self._ready_batches.get(block=False)
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\queue.py", line 167, in get
+    raise Empty
+_queue.Empty
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\site-packages\pycaret\internal\tabular.py", line 2203, in compare_models
+    model, model_fit_time = create_model_supervised(**create_model_args)
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\site-packages\pycaret\internal\tabular.py", line 3200, in create_model_supervised
+    scores = cross_validate(
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\site-packages\sklearn\utils\validation.py", line 72, in inner_f
+    return f(**kwargs)
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\site-packages\sklearn\model_selection\_validation.py", line 242, in cross_validate
+    scores = parallel(
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\site-packages\joblib\parallel.py", line 1085, in __call__
+    if self.dispatch_one_batch(iterator):
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\site-packages\joblib\parallel.py", line 873, in dispatch_one_batch
+    islice = list(itertools.islice(iterator, big_batch_size))
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\site-packages\sklearn\model_selection\_validation.py", line 242, in <genexpr>
+    scores = parallel(
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\site-packages\sklearn\model_selection\_split.py", line 336, in split
+    for train, test in super().split(X, y, groups):
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\site-packages\sklearn\model_selection\_split.py", line 80, in split
+    for test_index in self._iter_test_masks(X, y, groups):
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\site-packages\sklearn\model_selection\_split.py", line 697, in _iter_test_masks
+    test_folds = self._make_test_folds(X, y)
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\site-packages\sklearn\model_selection\_split.py", line 666, in _make_test_folds
+    raise ValueError("n_splits=%d cannot be greater than the"
+ValueError: n_splits=10 cannot be greater than the number of members in each class.
+
+2023-03-13 16:16:24,542:INFO:Initializing create_model()
+2023-03-13 16:16:24,542:INFO:create_model(estimator=gbc, fold=StratifiedKFold(n_splits=10, random_state=None, shuffle=False), round=4, cross_validation=True, predict=True, fit_kwargs={}, groups=None, refit=False, verbose=False, system=False, metrics=None, experiment_custom_tags=None, add_to_model_list=True, probability_threshold=None, display=<pycaret.internal.Display.Display object at 0x00000170E48D3730>, return_train_score=False, kwargs={})
+2023-03-13 16:16:24,542:INFO:Checking exceptions
+2023-03-13 16:16:24,542:INFO:Importing libraries
+2023-03-13 16:16:24,542:INFO:Copying training dataset
+2023-03-13 16:16:24,542:INFO:Defining folds
+2023-03-13 16:16:24,542:INFO:Declaring metric variables
+2023-03-13 16:16:24,551:INFO:Importing untrained model
+2023-03-13 16:16:24,560:INFO:Gradient Boosting Classifier Imported succesfully
+2023-03-13 16:16:24,575:INFO:Starting cross validation
+2023-03-13 16:16:24,575:INFO:Cross validating with StratifiedKFold(n_splits=10, random_state=None, shuffle=False), n_jobs=-1
+2023-03-13 16:16:24,577:ERROR:create_model() for gbc raised an exception or returned all 0.0:
+2023-03-13 16:16:24,578:ERROR:Traceback (most recent call last):
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\site-packages\joblib\parallel.py", line 862, in dispatch_one_batch
+    tasks = self._ready_batches.get(block=False)
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\queue.py", line 167, in get
+    raise Empty
+_queue.Empty
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\site-packages\pycaret\internal\tabular.py", line 2203, in compare_models
+    model, model_fit_time = create_model_supervised(**create_model_args)
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\site-packages\pycaret\internal\tabular.py", line 3200, in create_model_supervised
+    scores = cross_validate(
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\site-packages\sklearn\utils\validation.py", line 72, in inner_f
+    return f(**kwargs)
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\site-packages\sklearn\model_selection\_validation.py", line 242, in cross_validate
+    scores = parallel(
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\site-packages\joblib\parallel.py", line 1085, in __call__
+    if self.dispatch_one_batch(iterator):
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\site-packages\joblib\parallel.py", line 873, in dispatch_one_batch
+    islice = list(itertools.islice(iterator, big_batch_size))
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\site-packages\sklearn\model_selection\_validation.py", line 242, in <genexpr>
+    scores = parallel(
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\site-packages\sklearn\model_selection\_split.py", line 336, in split
+    for train, test in super().split(X, y, groups):
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\site-packages\sklearn\model_selection\_split.py", line 80, in split
+    for test_index in self._iter_test_masks(X, y, groups):
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\site-packages\sklearn\model_selection\_split.py", line 697, in _iter_test_masks
+    test_folds = self._make_test_folds(X, y)
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\site-packages\sklearn\model_selection\_split.py", line 666, in _make_test_folds
+    raise ValueError("n_splits=%d cannot be greater than the"
+ValueError: n_splits=10 cannot be greater than the number of members in each class.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\site-packages\joblib\parallel.py", line 862, in dispatch_one_batch
+    tasks = self._ready_batches.get(block=False)
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\queue.py", line 167, in get
+    raise Empty
+_queue.Empty
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\site-packages\pycaret\internal\tabular.py", line 2212, in compare_models
+    model, model_fit_time = create_model_supervised(**create_model_args)
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\site-packages\pycaret\internal\tabular.py", line 3200, in create_model_supervised
+    scores = cross_validate(
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\site-packages\sklearn\utils\validation.py", line 72, in inner_f
+    return f(**kwargs)
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\site-packages\sklearn\model_selection\_validation.py", line 242, in cross_validate
+    scores = parallel(
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\site-packages\joblib\parallel.py", line 1085, in __call__
+    if self.dispatch_one_batch(iterator):
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\site-packages\joblib\parallel.py", line 873, in dispatch_one_batch
+    islice = list(itertools.islice(iterator, big_batch_size))
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\site-packages\sklearn\model_selection\_validation.py", line 242, in <genexpr>
+    scores = parallel(
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\site-packages\sklearn\model_selection\_split.py", line 336, in split
+    for train, test in super().split(X, y, groups):
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\site-packages\sklearn\model_selection\_split.py", line 80, in split
+    for test_index in self._iter_test_masks(X, y, groups):
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\site-packages\sklearn\model_selection\_split.py", line 697, in _iter_test_masks
+    test_folds = self._make_test_folds(X, y)
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\site-packages\sklearn\model_selection\_split.py", line 666, in _make_test_folds
+    raise ValueError("n_splits=%d cannot be greater than the"
+ValueError: n_splits=10 cannot be greater than the number of members in each class.
+
+2023-03-13 16:16:24,578:INFO:Initializing Linear Discriminant Analysis
+2023-03-13 16:16:24,578:INFO:Total runtime is 0.0170032262802124 minutes
+2023-03-13 16:16:24,584:INFO:SubProcess create_model() called ==================================
+2023-03-13 16:16:24,584:INFO:Initializing create_model()
+2023-03-13 16:16:24,584:INFO:create_model(estimator=lda, fold=StratifiedKFold(n_splits=10, random_state=None, shuffle=False), round=4, cross_validation=True, predict=True, fit_kwargs={}, groups=None, refit=False, verbose=False, system=False, metrics=None, experiment_custom_tags=None, add_to_model_list=True, probability_threshold=None, display=<pycaret.internal.Display.Display object at 0x00000170E48D3730>, return_train_score=False, kwargs={})
+2023-03-13 16:16:24,584:INFO:Checking exceptions
+2023-03-13 16:16:24,584:INFO:Importing libraries
+2023-03-13 16:16:24,584:INFO:Copying training dataset
+2023-03-13 16:16:24,586:INFO:Defining folds
+2023-03-13 16:16:24,586:INFO:Declaring metric variables
+2023-03-13 16:16:24,591:INFO:Importing untrained model
+2023-03-13 16:16:24,596:INFO:Linear Discriminant Analysis Imported succesfully
+2023-03-13 16:16:24,609:INFO:Starting cross validation
+2023-03-13 16:16:24,609:INFO:Cross validating with StratifiedKFold(n_splits=10, random_state=None, shuffle=False), n_jobs=-1
+2023-03-13 16:16:24,611:WARNING:create_model() for lda raised an exception or returned all 0.0, trying without fit_kwargs:
+2023-03-13 16:16:24,611:WARNING:Traceback (most recent call last):
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\site-packages\joblib\parallel.py", line 862, in dispatch_one_batch
+    tasks = self._ready_batches.get(block=False)
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\queue.py", line 167, in get
+    raise Empty
+_queue.Empty
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\site-packages\pycaret\internal\tabular.py", line 2203, in compare_models
+    model, model_fit_time = create_model_supervised(**create_model_args)
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\site-packages\pycaret\internal\tabular.py", line 3200, in create_model_supervised
+    scores = cross_validate(
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\site-packages\sklearn\utils\validation.py", line 72, in inner_f
+    return f(**kwargs)
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\site-packages\sklearn\model_selection\_validation.py", line 242, in cross_validate
+    scores = parallel(
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\site-packages\joblib\parallel.py", line 1085, in __call__
+    if self.dispatch_one_batch(iterator):
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\site-packages\joblib\parallel.py", line 873, in dispatch_one_batch
+    islice = list(itertools.islice(iterator, big_batch_size))
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\site-packages\sklearn\model_selection\_validation.py", line 242, in <genexpr>
+    scores = parallel(
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\site-packages\sklearn\model_selection\_split.py", line 336, in split
+    for train, test in super().split(X, y, groups):
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\site-packages\sklearn\model_selection\_split.py", line 80, in split
+    for test_index in self._iter_test_masks(X, y, groups):
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\site-packages\sklearn\model_selection\_split.py", line 697, in _iter_test_masks
+    test_folds = self._make_test_folds(X, y)
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\site-packages\sklearn\model_selection\_split.py", line 666, in _make_test_folds
+    raise ValueError("n_splits=%d cannot be greater than the"
+ValueError: n_splits=10 cannot be greater than the number of members in each class.
+
+2023-03-13 16:16:24,612:INFO:Initializing create_model()
+2023-03-13 16:16:24,612:INFO:create_model(estimator=lda, fold=StratifiedKFold(n_splits=10, random_state=None, shuffle=False), round=4, cross_validation=True, predict=True, fit_kwargs={}, groups=None, refit=False, verbose=False, system=False, metrics=None, experiment_custom_tags=None, add_to_model_list=True, probability_threshold=None, display=<pycaret.internal.Display.Display object at 0x00000170E48D3730>, return_train_score=False, kwargs={})
+2023-03-13 16:16:24,612:INFO:Checking exceptions
+2023-03-13 16:16:24,612:INFO:Importing libraries
+2023-03-13 16:16:24,612:INFO:Copying training dataset
+2023-03-13 16:16:24,612:INFO:Defining folds
+2023-03-13 16:16:24,613:INFO:Declaring metric variables
+2023-03-13 16:16:24,619:INFO:Importing untrained model
+2023-03-13 16:16:24,624:INFO:Linear Discriminant Analysis Imported succesfully
+2023-03-13 16:16:24,636:INFO:Starting cross validation
+2023-03-13 16:16:24,637:INFO:Cross validating with StratifiedKFold(n_splits=10, random_state=None, shuffle=False), n_jobs=-1
+2023-03-13 16:16:24,639:ERROR:create_model() for lda raised an exception or returned all 0.0:
+2023-03-13 16:16:24,639:ERROR:Traceback (most recent call last):
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\site-packages\joblib\parallel.py", line 862, in dispatch_one_batch
+    tasks = self._ready_batches.get(block=False)
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\queue.py", line 167, in get
+    raise Empty
+_queue.Empty
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\site-packages\pycaret\internal\tabular.py", line 2203, in compare_models
+    model, model_fit_time = create_model_supervised(**create_model_args)
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\site-packages\pycaret\internal\tabular.py", line 3200, in create_model_supervised
+    scores = cross_validate(
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\site-packages\sklearn\utils\validation.py", line 72, in inner_f
+    return f(**kwargs)
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\site-packages\sklearn\model_selection\_validation.py", line 242, in cross_validate
+    scores = parallel(
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\site-packages\joblib\parallel.py", line 1085, in __call__
+    if self.dispatch_one_batch(iterator):
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\site-packages\joblib\parallel.py", line 873, in dispatch_one_batch
+    islice = list(itertools.islice(iterator, big_batch_size))
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\site-packages\sklearn\model_selection\_validation.py", line 242, in <genexpr>
+    scores = parallel(
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\site-packages\sklearn\model_selection\_split.py", line 336, in split
+    for train, test in super().split(X, y, groups):
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\site-packages\sklearn\model_selection\_split.py", line 80, in split
+    for test_index in self._iter_test_masks(X, y, groups):
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\site-packages\sklearn\model_selection\_split.py", line 697, in _iter_test_masks
+    test_folds = self._make_test_folds(X, y)
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\site-packages\sklearn\model_selection\_split.py", line 666, in _make_test_folds
+    raise ValueError("n_splits=%d cannot be greater than the"
+ValueError: n_splits=10 cannot be greater than the number of members in each class.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\site-packages\joblib\parallel.py", line 862, in dispatch_one_batch
+    tasks = self._ready_batches.get(block=False)
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\queue.py", line 167, in get
+    raise Empty
+_queue.Empty
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\site-packages\pycaret\internal\tabular.py", line 2212, in compare_models
+    model, model_fit_time = create_model_supervised(**create_model_args)
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\site-packages\pycaret\internal\tabular.py", line 3200, in create_model_supervised
+    scores = cross_validate(
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\site-packages\sklearn\utils\validation.py", line 72, in inner_f
+    return f(**kwargs)
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\site-packages\sklearn\model_selection\_validation.py", line 242, in cross_validate
+    scores = parallel(
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\site-packages\joblib\parallel.py", line 1085, in __call__
+    if self.dispatch_one_batch(iterator):
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\site-packages\joblib\parallel.py", line 873, in dispatch_one_batch
+    islice = list(itertools.islice(iterator, big_batch_size))
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\site-packages\sklearn\model_selection\_validation.py", line 242, in <genexpr>
+    scores = parallel(
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\site-packages\sklearn\model_selection\_split.py", line 336, in split
+    for train, test in super().split(X, y, groups):
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\site-packages\sklearn\model_selection\_split.py", line 80, in split
+    for test_index in self._iter_test_masks(X, y, groups):
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\site-packages\sklearn\model_selection\_split.py", line 697, in _iter_test_masks
+    test_folds = self._make_test_folds(X, y)
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\site-packages\sklearn\model_selection\_split.py", line 666, in _make_test_folds
+    raise ValueError("n_splits=%d cannot be greater than the"
+ValueError: n_splits=10 cannot be greater than the number of members in each class.
+
+2023-03-13 16:16:24,640:INFO:Initializing Extra Trees Classifier
+2023-03-13 16:16:24,640:INFO:Total runtime is 0.018034148216247558 minutes
+2023-03-13 16:16:24,644:INFO:SubProcess create_model() called ==================================
+2023-03-13 16:16:24,644:INFO:Initializing create_model()
+2023-03-13 16:16:24,644:INFO:create_model(estimator=et, fold=StratifiedKFold(n_splits=10, random_state=None, shuffle=False), round=4, cross_validation=True, predict=True, fit_kwargs={}, groups=None, refit=False, verbose=False, system=False, metrics=None, experiment_custom_tags=None, add_to_model_list=True, probability_threshold=None, display=<pycaret.internal.Display.Display object at 0x00000170E48D3730>, return_train_score=False, kwargs={})
+2023-03-13 16:16:24,644:INFO:Checking exceptions
+2023-03-13 16:16:24,646:INFO:Importing libraries
+2023-03-13 16:16:24,646:INFO:Copying training dataset
+2023-03-13 16:16:24,646:INFO:Defining folds
+2023-03-13 16:16:24,647:INFO:Declaring metric variables
+2023-03-13 16:16:24,652:INFO:Importing untrained model
+2023-03-13 16:16:24,656:INFO:Extra Trees Classifier Imported succesfully
+2023-03-13 16:16:24,667:INFO:Starting cross validation
+2023-03-13 16:16:24,667:INFO:Cross validating with StratifiedKFold(n_splits=10, random_state=None, shuffle=False), n_jobs=-1
+2023-03-13 16:16:24,669:WARNING:create_model() for et raised an exception or returned all 0.0, trying without fit_kwargs:
+2023-03-13 16:16:24,670:WARNING:Traceback (most recent call last):
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\site-packages\joblib\parallel.py", line 862, in dispatch_one_batch
+    tasks = self._ready_batches.get(block=False)
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\queue.py", line 167, in get
+    raise Empty
+_queue.Empty
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\site-packages\pycaret\internal\tabular.py", line 2203, in compare_models
+    model, model_fit_time = create_model_supervised(**create_model_args)
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\site-packages\pycaret\internal\tabular.py", line 3200, in create_model_supervised
+    scores = cross_validate(
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\site-packages\sklearn\utils\validation.py", line 72, in inner_f
+    return f(**kwargs)
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\site-packages\sklearn\model_selection\_validation.py", line 242, in cross_validate
+    scores = parallel(
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\site-packages\joblib\parallel.py", line 1085, in __call__
+    if self.dispatch_one_batch(iterator):
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\site-packages\joblib\parallel.py", line 873, in dispatch_one_batch
+    islice = list(itertools.islice(iterator, big_batch_size))
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\site-packages\sklearn\model_selection\_validation.py", line 242, in <genexpr>
+    scores = parallel(
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\site-packages\sklearn\model_selection\_split.py", line 336, in split
+    for train, test in super().split(X, y, groups):
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\site-packages\sklearn\model_selection\_split.py", line 80, in split
+    for test_index in self._iter_test_masks(X, y, groups):
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\site-packages\sklearn\model_selection\_split.py", line 697, in _iter_test_masks
+    test_folds = self._make_test_folds(X, y)
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\site-packages\sklearn\model_selection\_split.py", line 666, in _make_test_folds
+    raise ValueError("n_splits=%d cannot be greater than the"
+ValueError: n_splits=10 cannot be greater than the number of members in each class.
+
+2023-03-13 16:16:24,670:INFO:Initializing create_model()
+2023-03-13 16:16:24,670:INFO:create_model(estimator=et, fold=StratifiedKFold(n_splits=10, random_state=None, shuffle=False), round=4, cross_validation=True, predict=True, fit_kwargs={}, groups=None, refit=False, verbose=False, system=False, metrics=None, experiment_custom_tags=None, add_to_model_list=True, probability_threshold=None, display=<pycaret.internal.Display.Display object at 0x00000170E48D3730>, return_train_score=False, kwargs={})
+2023-03-13 16:16:24,670:INFO:Checking exceptions
+2023-03-13 16:16:24,670:INFO:Importing libraries
+2023-03-13 16:16:24,670:INFO:Copying training dataset
+2023-03-13 16:16:24,671:INFO:Defining folds
+2023-03-13 16:16:24,671:INFO:Declaring metric variables
+2023-03-13 16:16:24,676:INFO:Importing untrained model
+2023-03-13 16:16:24,681:INFO:Extra Trees Classifier Imported succesfully
+2023-03-13 16:16:24,692:INFO:Starting cross validation
+2023-03-13 16:16:24,694:INFO:Cross validating with StratifiedKFold(n_splits=10, random_state=None, shuffle=False), n_jobs=-1
+2023-03-13 16:16:24,696:ERROR:create_model() for et raised an exception or returned all 0.0:
+2023-03-13 16:16:24,697:ERROR:Traceback (most recent call last):
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\site-packages\joblib\parallel.py", line 862, in dispatch_one_batch
+    tasks = self._ready_batches.get(block=False)
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\queue.py", line 167, in get
+    raise Empty
+_queue.Empty
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\site-packages\pycaret\internal\tabular.py", line 2203, in compare_models
+    model, model_fit_time = create_model_supervised(**create_model_args)
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\site-packages\pycaret\internal\tabular.py", line 3200, in create_model_supervised
+    scores = cross_validate(
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\site-packages\sklearn\utils\validation.py", line 72, in inner_f
+    return f(**kwargs)
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\site-packages\sklearn\model_selection\_validation.py", line 242, in cross_validate
+    scores = parallel(
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\site-packages\joblib\parallel.py", line 1085, in __call__
+    if self.dispatch_one_batch(iterator):
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\site-packages\joblib\parallel.py", line 873, in dispatch_one_batch
+    islice = list(itertools.islice(iterator, big_batch_size))
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\site-packages\sklearn\model_selection\_validation.py", line 242, in <genexpr>
+    scores = parallel(
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\site-packages\sklearn\model_selection\_split.py", line 336, in split
+    for train, test in super().split(X, y, groups):
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\site-packages\sklearn\model_selection\_split.py", line 80, in split
+    for test_index in self._iter_test_masks(X, y, groups):
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\site-packages\sklearn\model_selection\_split.py", line 697, in _iter_test_masks
+    test_folds = self._make_test_folds(X, y)
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\site-packages\sklearn\model_selection\_split.py", line 666, in _make_test_folds
+    raise ValueError("n_splits=%d cannot be greater than the"
+ValueError: n_splits=10 cannot be greater than the number of members in each class.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\site-packages\joblib\parallel.py", line 862, in dispatch_one_batch
+    tasks = self._ready_batches.get(block=False)
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\queue.py", line 167, in get
+    raise Empty
+_queue.Empty
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\site-packages\pycaret\internal\tabular.py", line 2212, in compare_models
+    model, model_fit_time = create_model_supervised(**create_model_args)
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\site-packages\pycaret\internal\tabular.py", line 3200, in create_model_supervised
+    scores = cross_validate(
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\site-packages\sklearn\utils\validation.py", line 72, in inner_f
+    return f(**kwargs)
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\site-packages\sklearn\model_selection\_validation.py", line 242, in cross_validate
+    scores = parallel(
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\site-packages\joblib\parallel.py", line 1085, in __call__
+    if self.dispatch_one_batch(iterator):
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\site-packages\joblib\parallel.py", line 873, in dispatch_one_batch
+    islice = list(itertools.islice(iterator, big_batch_size))
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\site-packages\sklearn\model_selection\_validation.py", line 242, in <genexpr>
+    scores = parallel(
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\site-packages\sklearn\model_selection\_split.py", line 336, in split
+    for train, test in super().split(X, y, groups):
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\site-packages\sklearn\model_selection\_split.py", line 80, in split
+    for test_index in self._iter_test_masks(X, y, groups):
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\site-packages\sklearn\model_selection\_split.py", line 697, in _iter_test_masks
+    test_folds = self._make_test_folds(X, y)
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\site-packages\sklearn\model_selection\_split.py", line 666, in _make_test_folds
+    raise ValueError("n_splits=%d cannot be greater than the"
+ValueError: n_splits=10 cannot be greater than the number of members in each class.
+
+2023-03-13 16:16:24,697:INFO:Initializing Light Gradient Boosting Machine
+2023-03-13 16:16:24,697:INFO:Total runtime is 0.018983117739359536 minutes
+2023-03-13 16:16:24,703:INFO:SubProcess create_model() called ==================================
+2023-03-13 16:16:24,703:INFO:Initializing create_model()
+2023-03-13 16:16:24,703:INFO:create_model(estimator=lightgbm, fold=StratifiedKFold(n_splits=10, random_state=None, shuffle=False), round=4, cross_validation=True, predict=True, fit_kwargs={}, groups=None, refit=False, verbose=False, system=False, metrics=None, experiment_custom_tags=None, add_to_model_list=True, probability_threshold=None, display=<pycaret.internal.Display.Display object at 0x00000170E48D3730>, return_train_score=False, kwargs={})
+2023-03-13 16:16:24,703:INFO:Checking exceptions
+2023-03-13 16:16:24,703:INFO:Importing libraries
+2023-03-13 16:16:24,703:INFO:Copying training dataset
+2023-03-13 16:16:24,704:INFO:Defining folds
+2023-03-13 16:16:24,704:INFO:Declaring metric variables
+2023-03-13 16:16:24,708:INFO:Importing untrained model
+2023-03-13 16:16:24,714:INFO:Light Gradient Boosting Machine Imported succesfully
+2023-03-13 16:16:24,725:INFO:Starting cross validation
+2023-03-13 16:16:24,725:INFO:Cross validating with StratifiedKFold(n_splits=10, random_state=None, shuffle=False), n_jobs=-1
+2023-03-13 16:16:24,727:WARNING:create_model() for lightgbm raised an exception or returned all 0.0, trying without fit_kwargs:
+2023-03-13 16:16:24,727:WARNING:Traceback (most recent call last):
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\site-packages\joblib\parallel.py", line 862, in dispatch_one_batch
+    tasks = self._ready_batches.get(block=False)
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\queue.py", line 167, in get
+    raise Empty
+_queue.Empty
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\site-packages\pycaret\internal\tabular.py", line 2203, in compare_models
+    model, model_fit_time = create_model_supervised(**create_model_args)
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\site-packages\pycaret\internal\tabular.py", line 3200, in create_model_supervised
+    scores = cross_validate(
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\site-packages\sklearn\utils\validation.py", line 72, in inner_f
+    return f(**kwargs)
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\site-packages\sklearn\model_selection\_validation.py", line 242, in cross_validate
+    scores = parallel(
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\site-packages\joblib\parallel.py", line 1085, in __call__
+    if self.dispatch_one_batch(iterator):
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\site-packages\joblib\parallel.py", line 873, in dispatch_one_batch
+    islice = list(itertools.islice(iterator, big_batch_size))
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\site-packages\sklearn\model_selection\_validation.py", line 242, in <genexpr>
+    scores = parallel(
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\site-packages\sklearn\model_selection\_split.py", line 336, in split
+    for train, test in super().split(X, y, groups):
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\site-packages\sklearn\model_selection\_split.py", line 80, in split
+    for test_index in self._iter_test_masks(X, y, groups):
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\site-packages\sklearn\model_selection\_split.py", line 697, in _iter_test_masks
+    test_folds = self._make_test_folds(X, y)
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\site-packages\sklearn\model_selection\_split.py", line 666, in _make_test_folds
+    raise ValueError("n_splits=%d cannot be greater than the"
+ValueError: n_splits=10 cannot be greater than the number of members in each class.
+
+2023-03-13 16:16:24,728:INFO:Initializing create_model()
+2023-03-13 16:16:24,728:INFO:create_model(estimator=lightgbm, fold=StratifiedKFold(n_splits=10, random_state=None, shuffle=False), round=4, cross_validation=True, predict=True, fit_kwargs={}, groups=None, refit=False, verbose=False, system=False, metrics=None, experiment_custom_tags=None, add_to_model_list=True, probability_threshold=None, display=<pycaret.internal.Display.Display object at 0x00000170E48D3730>, return_train_score=False, kwargs={})
+2023-03-13 16:16:24,728:INFO:Checking exceptions
+2023-03-13 16:16:24,728:INFO:Importing libraries
+2023-03-13 16:16:24,728:INFO:Copying training dataset
+2023-03-13 16:16:24,728:INFO:Defining folds
+2023-03-13 16:16:24,728:INFO:Declaring metric variables
+2023-03-13 16:16:24,734:INFO:Importing untrained model
+2023-03-13 16:16:24,740:INFO:Light Gradient Boosting Machine Imported succesfully
+2023-03-13 16:16:24,751:INFO:Starting cross validation
+2023-03-13 16:16:24,752:INFO:Cross validating with StratifiedKFold(n_splits=10, random_state=None, shuffle=False), n_jobs=-1
+2023-03-13 16:16:24,753:ERROR:create_model() for lightgbm raised an exception or returned all 0.0:
+2023-03-13 16:16:24,753:ERROR:Traceback (most recent call last):
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\site-packages\joblib\parallel.py", line 862, in dispatch_one_batch
+    tasks = self._ready_batches.get(block=False)
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\queue.py", line 167, in get
+    raise Empty
+_queue.Empty
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\site-packages\pycaret\internal\tabular.py", line 2203, in compare_models
+    model, model_fit_time = create_model_supervised(**create_model_args)
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\site-packages\pycaret\internal\tabular.py", line 3200, in create_model_supervised
+    scores = cross_validate(
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\site-packages\sklearn\utils\validation.py", line 72, in inner_f
+    return f(**kwargs)
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\site-packages\sklearn\model_selection\_validation.py", line 242, in cross_validate
+    scores = parallel(
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\site-packages\joblib\parallel.py", line 1085, in __call__
+    if self.dispatch_one_batch(iterator):
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\site-packages\joblib\parallel.py", line 873, in dispatch_one_batch
+    islice = list(itertools.islice(iterator, big_batch_size))
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\site-packages\sklearn\model_selection\_validation.py", line 242, in <genexpr>
+    scores = parallel(
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\site-packages\sklearn\model_selection\_split.py", line 336, in split
+    for train, test in super().split(X, y, groups):
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\site-packages\sklearn\model_selection\_split.py", line 80, in split
+    for test_index in self._iter_test_masks(X, y, groups):
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\site-packages\sklearn\model_selection\_split.py", line 697, in _iter_test_masks
+    test_folds = self._make_test_folds(X, y)
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\site-packages\sklearn\model_selection\_split.py", line 666, in _make_test_folds
+    raise ValueError("n_splits=%d cannot be greater than the"
+ValueError: n_splits=10 cannot be greater than the number of members in each class.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\site-packages\joblib\parallel.py", line 862, in dispatch_one_batch
+    tasks = self._ready_batches.get(block=False)
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\queue.py", line 167, in get
+    raise Empty
+_queue.Empty
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\site-packages\pycaret\internal\tabular.py", line 2212, in compare_models
+    model, model_fit_time = create_model_supervised(**create_model_args)
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\site-packages\pycaret\internal\tabular.py", line 3200, in create_model_supervised
+    scores = cross_validate(
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\site-packages\sklearn\utils\validation.py", line 72, in inner_f
+    return f(**kwargs)
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\site-packages\sklearn\model_selection\_validation.py", line 242, in cross_validate
+    scores = parallel(
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\site-packages\joblib\parallel.py", line 1085, in __call__
+    if self.dispatch_one_batch(iterator):
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\site-packages\joblib\parallel.py", line 873, in dispatch_one_batch
+    islice = list(itertools.islice(iterator, big_batch_size))
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\site-packages\sklearn\model_selection\_validation.py", line 242, in <genexpr>
+    scores = parallel(
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\site-packages\sklearn\model_selection\_split.py", line 336, in split
+    for train, test in super().split(X, y, groups):
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\site-packages\sklearn\model_selection\_split.py", line 80, in split
+    for test_index in self._iter_test_masks(X, y, groups):
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\site-packages\sklearn\model_selection\_split.py", line 697, in _iter_test_masks
+    test_folds = self._make_test_folds(X, y)
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\site-packages\sklearn\model_selection\_split.py", line 666, in _make_test_folds
+    raise ValueError("n_splits=%d cannot be greater than the"
+ValueError: n_splits=10 cannot be greater than the number of members in each class.
+
+2023-03-13 16:16:24,753:INFO:Initializing Dummy Classifier
+2023-03-13 16:16:24,754:INFO:Total runtime is 0.019944492975870767 minutes
+2023-03-13 16:16:24,758:INFO:SubProcess create_model() called ==================================
+2023-03-13 16:16:24,759:INFO:Initializing create_model()
+2023-03-13 16:16:24,759:INFO:create_model(estimator=dummy, fold=StratifiedKFold(n_splits=10, random_state=None, shuffle=False), round=4, cross_validation=True, predict=True, fit_kwargs={}, groups=None, refit=False, verbose=False, system=False, metrics=None, experiment_custom_tags=None, add_to_model_list=True, probability_threshold=None, display=<pycaret.internal.Display.Display object at 0x00000170E48D3730>, return_train_score=False, kwargs={})
+2023-03-13 16:16:24,759:INFO:Checking exceptions
+2023-03-13 16:16:24,759:INFO:Importing libraries
+2023-03-13 16:16:24,759:INFO:Copying training dataset
+2023-03-13 16:16:24,760:INFO:Defining folds
+2023-03-13 16:16:24,760:INFO:Declaring metric variables
+2023-03-13 16:16:24,766:INFO:Importing untrained model
+2023-03-13 16:16:24,771:INFO:Dummy Classifier Imported succesfully
+2023-03-13 16:16:24,782:INFO:Starting cross validation
+2023-03-13 16:16:24,782:INFO:Cross validating with StratifiedKFold(n_splits=10, random_state=None, shuffle=False), n_jobs=-1
+2023-03-13 16:16:24,784:WARNING:create_model() for dummy raised an exception or returned all 0.0, trying without fit_kwargs:
+2023-03-13 16:16:24,784:WARNING:Traceback (most recent call last):
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\site-packages\joblib\parallel.py", line 862, in dispatch_one_batch
+    tasks = self._ready_batches.get(block=False)
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\queue.py", line 167, in get
+    raise Empty
+_queue.Empty
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\site-packages\pycaret\internal\tabular.py", line 2203, in compare_models
+    model, model_fit_time = create_model_supervised(**create_model_args)
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\site-packages\pycaret\internal\tabular.py", line 3200, in create_model_supervised
+    scores = cross_validate(
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\site-packages\sklearn\utils\validation.py", line 72, in inner_f
+    return f(**kwargs)
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\site-packages\sklearn\model_selection\_validation.py", line 242, in cross_validate
+    scores = parallel(
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\site-packages\joblib\parallel.py", line 1085, in __call__
+    if self.dispatch_one_batch(iterator):
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\site-packages\joblib\parallel.py", line 873, in dispatch_one_batch
+    islice = list(itertools.islice(iterator, big_batch_size))
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\site-packages\sklearn\model_selection\_validation.py", line 242, in <genexpr>
+    scores = parallel(
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\site-packages\sklearn\model_selection\_split.py", line 336, in split
+    for train, test in super().split(X, y, groups):
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\site-packages\sklearn\model_selection\_split.py", line 80, in split
+    for test_index in self._iter_test_masks(X, y, groups):
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\site-packages\sklearn\model_selection\_split.py", line 697, in _iter_test_masks
+    test_folds = self._make_test_folds(X, y)
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\site-packages\sklearn\model_selection\_split.py", line 666, in _make_test_folds
+    raise ValueError("n_splits=%d cannot be greater than the"
+ValueError: n_splits=10 cannot be greater than the number of members in each class.
+
+2023-03-13 16:16:24,785:INFO:Initializing create_model()
+2023-03-13 16:16:24,785:INFO:create_model(estimator=dummy, fold=StratifiedKFold(n_splits=10, random_state=None, shuffle=False), round=4, cross_validation=True, predict=True, fit_kwargs={}, groups=None, refit=False, verbose=False, system=False, metrics=None, experiment_custom_tags=None, add_to_model_list=True, probability_threshold=None, display=<pycaret.internal.Display.Display object at 0x00000170E48D3730>, return_train_score=False, kwargs={})
+2023-03-13 16:16:24,785:INFO:Checking exceptions
+2023-03-13 16:16:24,785:INFO:Importing libraries
+2023-03-13 16:16:24,785:INFO:Copying training dataset
+2023-03-13 16:16:24,785:INFO:Defining folds
+2023-03-13 16:16:24,786:INFO:Declaring metric variables
+2023-03-13 16:16:24,791:INFO:Importing untrained model
+2023-03-13 16:16:24,797:INFO:Dummy Classifier Imported succesfully
+2023-03-13 16:16:24,807:INFO:Starting cross validation
+2023-03-13 16:16:24,807:INFO:Cross validating with StratifiedKFold(n_splits=10, random_state=None, shuffle=False), n_jobs=-1
+2023-03-13 16:16:24,809:ERROR:create_model() for dummy raised an exception or returned all 0.0:
+2023-03-13 16:16:24,810:ERROR:Traceback (most recent call last):
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\site-packages\joblib\parallel.py", line 862, in dispatch_one_batch
+    tasks = self._ready_batches.get(block=False)
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\queue.py", line 167, in get
+    raise Empty
+_queue.Empty
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\site-packages\pycaret\internal\tabular.py", line 2203, in compare_models
+    model, model_fit_time = create_model_supervised(**create_model_args)
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\site-packages\pycaret\internal\tabular.py", line 3200, in create_model_supervised
+    scores = cross_validate(
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\site-packages\sklearn\utils\validation.py", line 72, in inner_f
+    return f(**kwargs)
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\site-packages\sklearn\model_selection\_validation.py", line 242, in cross_validate
+    scores = parallel(
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\site-packages\joblib\parallel.py", line 1085, in __call__
+    if self.dispatch_one_batch(iterator):
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\site-packages\joblib\parallel.py", line 873, in dispatch_one_batch
+    islice = list(itertools.islice(iterator, big_batch_size))
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\site-packages\sklearn\model_selection\_validation.py", line 242, in <genexpr>
+    scores = parallel(
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\site-packages\sklearn\model_selection\_split.py", line 336, in split
+    for train, test in super().split(X, y, groups):
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\site-packages\sklearn\model_selection\_split.py", line 80, in split
+    for test_index in self._iter_test_masks(X, y, groups):
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\site-packages\sklearn\model_selection\_split.py", line 697, in _iter_test_masks
+    test_folds = self._make_test_folds(X, y)
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\site-packages\sklearn\model_selection\_split.py", line 666, in _make_test_folds
+    raise ValueError("n_splits=%d cannot be greater than the"
+ValueError: n_splits=10 cannot be greater than the number of members in each class.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\site-packages\joblib\parallel.py", line 862, in dispatch_one_batch
+    tasks = self._ready_batches.get(block=False)
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\queue.py", line 167, in get
+    raise Empty
+_queue.Empty
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\site-packages\pycaret\internal\tabular.py", line 2212, in compare_models
+    model, model_fit_time = create_model_supervised(**create_model_args)
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\site-packages\pycaret\internal\tabular.py", line 3200, in create_model_supervised
+    scores = cross_validate(
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\site-packages\sklearn\utils\validation.py", line 72, in inner_f
+    return f(**kwargs)
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\site-packages\sklearn\model_selection\_validation.py", line 242, in cross_validate
+    scores = parallel(
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\site-packages\joblib\parallel.py", line 1085, in __call__
+    if self.dispatch_one_batch(iterator):
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\site-packages\joblib\parallel.py", line 873, in dispatch_one_batch
+    islice = list(itertools.islice(iterator, big_batch_size))
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\site-packages\sklearn\model_selection\_validation.py", line 242, in <genexpr>
+    scores = parallel(
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\site-packages\sklearn\model_selection\_split.py", line 336, in split
+    for train, test in super().split(X, y, groups):
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\site-packages\sklearn\model_selection\_split.py", line 80, in split
+    for test_index in self._iter_test_masks(X, y, groups):
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\site-packages\sklearn\model_selection\_split.py", line 697, in _iter_test_masks
+    test_folds = self._make_test_folds(X, y)
+  File "c:\Users\y2kjd\anaconda3\envs\ML\lib\site-packages\sklearn\model_selection\_split.py", line 666, in _make_test_folds
+    raise ValueError("n_splits=%d cannot be greater than the"
+ValueError: n_splits=10 cannot be greater than the number of members in each class.
+
+2023-03-13 16:16:24,819:INFO:create_model_container: 0
+2023-03-13 16:16:24,819:INFO:master_model_container: 0
+2023-03-13 16:16:24,819:INFO:display_container: 2
+2023-03-13 16:16:24,820:INFO:[]
+2023-03-13 16:16:24,820:INFO:compare_models() succesfully completed......................................
