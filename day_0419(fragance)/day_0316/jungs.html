@@ -1,0 +1,51 @@
+<!--html태그 - 입력관련===============================================================================
+-사용자로부터 입력을 받을 수 있는 태그
+- 입력데이터 ==> 서버 전송
+* <form>~</form> : 서버전송에 관련된 태그들 담는 태그 
+    -전송관련 속성
+        *action : 데이터 처리 url
+        *method : 입력데이터 서버 전달방식(GET,POST)
+-사용자로부터 입력을 받을 수 있는 태그
+*<input type='입력의 종류'
+name=''
+value='사용자에게 보여지는 값'
+on이벤트이름='JS CODE'
+======================================================================================================-->
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>the one parfums -당신의 향수를 찾아서-</title>
+	<style>
+		.tab-content {
+			display: none;
+		}
+		.tab-content.active {
+			display: block;
+		}
+	</style>
+</head>
+<body>
+	<h1>아래의 응답에 맞게 향수를 추천 해드릴께요!</h1>
+	<button onclick="openTab('tab1')">나느 향수를 잘 몰라요!</button>
+	<button onclick="openTab('tab2')">나는 향수를 잘 알아요!</button>
+
+	<div id="tab1" class="tab-content active">
+		<p>향수가 없거나, 1~2개를 가지고 있는사람</p>
+	</div>
+	<div id="tab2" class="tab-content">
+		<p>향수</p>
+	</div>
+
+	<script>
+		function openTab(tabName) {
+			var i, tabContent;
+			tabContent = document.getElementsByClassName("tab-content");
+			for (i = 0; i < tabContent.length; i++) {
+				tabContent[i].classList.remove("active");
+			}
+			document.getElementById(tabName).classList.add("active");
+		}
+	</script>
+</body>
+</html>
