@@ -10,4 +10,4 @@ print( min(['A','B','a','Z']) )
 print( min("ABcDE") )
 
 print( sum([4,7]) )
-print( sum(['A','B']) )
+# print( sum(['A','B']) )
