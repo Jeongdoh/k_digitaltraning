@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Document Similarity Calculation</title>
+  </head>
+  <body>
+    <h1>Upload CSV Files</h1>
+    <form action="/" method="POST" enctype="multipart/form-data">
+      <label for="fire1">Fire1 CSV:</label>
+      <input type="file" name="fire1" id="fire1" accept=".csv" required><br><br>
+      <label for="fire2">Fire2 CSV:</label>
+      <input type="file" name="fire2" id="fire2" accept=".csv" required><br><br>
+      <input type="submit" value="Calculate Similarity">
+      <label for="similarityMethod">Select Similarity Method:</label>
+      <select name="similarityMethod" id="similarityMethod">
+        <option value="cosine">Cosine Similarity</option>
+        <option value="jaccard">Jaccard Similarity</option>
+        <option value="manhattan">Manhattan Distance</option>
+        <option value="euclidean">Euclidean Distance</option>
+      </select>
+    </form>
+  </body>
+</html>
