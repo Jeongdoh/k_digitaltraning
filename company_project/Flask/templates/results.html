@@ -1,16 +1,31 @@
 <!DOCTYPE html>
 <html>
-  <head>    <title>Similarity Results</title>
+  <head>    
+    <title>유사도 비교 결과</title>
     <!-- Add Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <!-- Add jQuery library -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <!-- Add Bootstrap JS -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <style>
+      body {
+          background-image: url("/static/book.jpg");
+          background-size: cover; 
+      }
+
+      .container {
+          background-color: white;
+          padding: 20px;
+          margin-top: 50px;
+          border-radius: 10px;
+      }
+    </style>
   </head>
   <body>
     <div class="container">
-      <h1 class="text-center my-5">Similarity Results</h1>
+      <h1 class="text-center my-5">유사도 비교 결과</h1>
+      <button onclick="goBack()" class="btn btn-primary mb-3">뒤로가기</button> <!-- 뒤로가기 버튼 -->
       {% if results %}
         <table class="table">
           <thead>
@@ -38,5 +53,11 @@
         <p>No results available.</p>
       {% endif %}
     </div>
+
+    <script>
+      function goBack() {
+        window.history.back(); // 뒤로 가는 기능
+      }
+    </script>
   </body>
 </html>
