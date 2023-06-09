@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About</title>
+    <link rel = "stylesheet" href = "/static/css/main.css">
+    <link rel = "stylesheet" href = "/static/css/about.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap');
+    </style>
+</head> 
+<div id="container">
+    
+    <header id = "header"> 
+        <nav class ="menu">
+            <ul>
+                <li><a href = {{url_for('home')}} ><b>Home</b></a></li>
+                <li><a href = {{url_for('about')}} ><b>About</b></a></li>
+                <li><a href = {{url_for('introduce')}}  ><b>introduce</b></a></li>
+                <li><a href = {{url_for('contact')}}  ><b>Contact</b></a></li>
+                <li><a href = {{url_for('code')}}  ><b>Code</b></a></li>
+            </ul>
+        </nav>
+    </header> 
+    <div class="list">
+      <div class ="two">
+          <img class = "me" src ="/static/imgs/bg-showcase-2.jpg" alt="" width="500px;" height="550px">
+          <h3 class ="intext"> <strong>자연어 처리 기반 유사 항목 도출 모델 분석 <br> KNU K-Digital Training a corporate project. WINITECH </strong><br><br>
+            <br><br>
+            "The Three Do"  <br><br>
+
+            파일1과 파일2를 첨부하고   <br>
+            두 문서간의 텍스트유사도비교 프로그램 입니다. <br>
+            ㅁㄴㅇㄹㄴㅁㄻㄴㅇㄹ <br><br><br><br>
+            <div style="font-size: 14px;"> 개발자 이메일 <br> </div>
+            <div style="font-size: 14px;"> 김도형 : thekimdh@gmail.com <br> </div>
+            <div style="font-size: 14px;"> 임도영 : imdymi@naver.com <br></div>
+            <div style="font-size: 14px;"> 정  도 : y2kjd@naver.com <br></div>
+            <br><br>
+            감사합니다.</h3>
+      </div>
+    </div>
+</div>
+</body>
+</html>
