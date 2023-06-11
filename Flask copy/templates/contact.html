@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact</title>
+    <link rel = "stylesheet" href = "/static/css/main.css">
+    <link rel = "stylesheet" href = "/static/css/count.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap');
+    </style>
+</head>
+<body>
+    <header id = "header"> 
+        <nav class ="menu">
+            <ul>
+                <li><a href = {{url_for('home')}} ><b>Home</b></a></li>
+                <li><a href = {{url_for('about')}} ><b>About</b></a></li>
+                <li><a href = {{url_for('introduce')}}  ><b>introduce</b></a></li>
+                <li><a href = {{url_for('contact')}}  ><b>Contact</b></a></li>
+                <li><a href = {{url_for('code')}}  ><b>Code</b></a></li>
+            </ul>
+        </nav>
+    </header> 
+    <div class="list">
+        <div class = "four">
+            <img class = "contact_img" src ="/static/imgs/bg.jpg">
+            <a href="https://subtitle1.github.io/" class="ct">Blog</a>
+            <a href="mailto:stella.kim.96211@gmail.com" class="ct">Gmail</a>
+            <a href="https://github.com/subtitle1" class="ct">Github</a>
+        </div>
+    </div>
+</body>
+</html>

@@ -93,7 +93,8 @@ def code():
 
     return render_template('code.html')
 
-
+if __name__ == '__main__':
+    app.run(debug=True)
 
 
 
@@ -163,26 +164,25 @@ def code():
 
 
 
-        # # Prepare the results
-        # results = []
-        # for i in range(len(similarity_scores)):
-        #     score = similarity_scores[i]
-        #     score = list(score)
-        #     x = score.index(max(score))
-        #     result = {
-        #         'index': fire2_data[i].split(',')[1],
-        #         'compared_text': fire1_data[x].split(',')[0],
-        #         'title': ' '.join(preprocessed_texts1[i]),
-        #         'compared_index': fire1_data[x].split(',')[1],
-        #         'similarity': max(score)
-        #     }
-        #     results.append(result)
+#         # # Prepare the results
+#         # results = []
+#         # for i in range(len(similarity_scores)):
+#         #     score = similarity_scores[i]
+#         #     score = list(score)
+#         #     x = score.index(max(score))
+#         #     result = {
+#         #         'index': fire2_data[i].split(',')[1],
+#         #         'compared_text': fire1_data[x].split(',')[0],
+#         #         'title': ' '.join(preprocessed_texts1[i]),
+#         #         'compared_index': fire1_data[x].split(',')[1],
+#         #         'similarity': max(score)
+#         #     }
+#         #     results.append(result)
 
-        # return render_template('results.html', results=results)
+#         # return render_template('results.html', results=results)
 
-if __name__ == '__main__':
-    app.run(debug=True)
-
+# if __name__ == '__main__':
+#     app.run(debug=True)
 
 
 

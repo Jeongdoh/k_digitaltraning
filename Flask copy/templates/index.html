@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🍒 THE THREE-DO 🍒</title>
+    <link rel = "stylesheet" href = "/static/css/main.css">
+    <link rel = "stylesheet" href = "/static/css/scroll.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap');
+    </style>
+</head>
+<body>
+
+<div id="container">
+    <header id = "header"> 
+        <nav class ="menu">
+            <ul>
+                <li><a href = {{url_for('home')}} ><b>Home</b></a></li>
+                <li><a href = {{url_for('about')}} ><b>About</b></a></li>
+                <li><a href = {{url_for('introduce')}}  ><b>introduce</b></a></li>
+                <li><a href = {{url_for('contact')}}  ><b>Contact</b></a></li>
+                <li><a href = {{url_for('code')}}  ><b>Code</b></a></li>
+            </ul>
+        </nav>
+    </header> 
+  <div class="list">
+      <div class="one">
+
+        <span class="profile"><img src="/static/imgs/bae.jpg" width="800px;" height="300px" alt=""/></span> 
+        <h3><strong>  </strong> <br><br> </h3>
+      </div>
+  </div>
+
+  <div class="list">
+      <div class ="two">
+          <img class = "me" src ="/static/imgs/bg-showcase-2.jpg" alt="" width="500px;" height="550px">
+          <h3 class ="intext"> <strong>자연어 처리 기반 유사 항목 도출 모델 분석 <br> KNU K-Digital Training a corporate project. WINITECH </strong><br><br>
+            "The Three Do"  <br><br><br><br><br>
+
+            파일1과 파일2를 첨부하고   <br>
+            두 문서간의 텍스트유사도비교 프로그램 입니다. <br>
+            <br><br><br><br>
+            <div style="font-size: 14px;"> 개발자 이메일 <br> </div>
+            <div style="font-size: 14px;"> 김도형 : thekimdh@gmail.com <br> </div>
+            <div style="font-size: 14px;"> 임도영 : imdymi@naver.com <br></div>
+            <div style="font-size: 14px;"> 정  도 : y2kjd@naver.com <br></div>
+            <br><br>
+            감사합니다.</h3>
+      </div>
+  </div>
+  
+  <div class="list">
+      <div class="three">
+          <h1><br><br> Curious about THE THREE - Do? 💕 </h1>
+          <div class = "favorites">
+              <div class="lists">
+                  <img class = "list_img" src="/static/imgs/what i love/mypet.jpg" alt="">
+                  <p class = "list_text"> ESFJ <br> 임도영 </p>
+              </div>
+
+              <div class="lists">
+                  <img class = "list_img" src="/static/imgs/dohyung.jpg" alt="">
+                  <p class = "list_text"> ENTP <br> 김도형 </p>
+              </div>
+
+              <div class="lists">
+                  <img class = "list_img" src="/static/imgs/jungdo.jpg" alt="">
+                  <p class = "list_text"> INFP <br> 정  도</p>
+              </div>
+
+          </div>
+      </div>
+  </div>
+
+  <div class="list">
+      <div class = "four">
+          <img class = "contact_img" src ="/static/imgs/bg.jpg">
+          <a href="http://www.winitech.com" class="ct">WINITECH</a>
+          <a href="https://app.slack.com/client/T053XEBBQL8/C0534RGCYPP" class="ct">slack</a>
+          <a href="https://www.notion.so/Winitech-13dbee81e9394e518a66f658e36dd6c5" class="ct">NOTION</a>
+      </div>
+  </div>
+<div>
+</body>
+</html>
