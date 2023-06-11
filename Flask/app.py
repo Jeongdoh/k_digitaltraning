@@ -21,12 +21,8 @@ def calculate_jaccard_similarity(tokens1, tokens2):
     return jaccard_similarity
 
 @app.route('/', methods=['GET'])
-def home():
+def index():
     return render_template('index.html')
-
-@app.route('/about', methods=['GET'])
-def about():
-    return render_template('about.html')
 
 @app.route('/contact', methods=['GET'])
 def contact():

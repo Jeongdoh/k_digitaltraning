@@ -4,6 +4,7 @@ body {
 }
 
 h3 {
+    
     font-family: 'Pretendard-Thin';
     color: #ffffff;
     text-align: center;
@@ -55,16 +56,16 @@ h3 {
 }
 
 .profile {
-    /* border-radius: 30%; */
+    border-radius: 30%;
     display: inline-block;
     /* 내부여백 */
     padding: 0.5rem;
     /* 위쪽여백 */
     margin-top: 10px;
-    border: 0.5px solid gray;
-    background-color: rgb(255, 255, 255);
+    /* border: 0.5px solid gray; */
+    /* background-color: rgb(255, 255, 255,0.1); */
     /* 실선설정 */
-    border: 1px solid rgba(255, 255, 255, 0.5);
+    /* border: 1px solid rgba(255, 255, 255, 0.5); */
 }
 
 /* .profile img {
@@ -78,6 +79,7 @@ h3 {
     margin-top: 35px;
     padding-left: 50px;
 }
+
 
 /* page 3 */
 
@@ -98,8 +100,8 @@ h1 {
 }
 
 .list_img {
-    width: 300px;
-    height: 300px;
+    /* width: 300px;
+    height: 300px; */
     display: block;
     margin: 7vh 5vh;
     margin-bottom: 50px;
@@ -113,8 +115,14 @@ h1 {
 /* page 4 */
 
 .four {
+    margin-top: 250px;
     text-align: center;
     align-items: center;
+}
+
+.five {
+        text-align: center;
+        align-items: center;
 }
 
 .contact_img {
@@ -124,7 +132,7 @@ h1 {
 }
 
 .ct {
-    margin-top: 80px;
+    margin-top: 500px;
     font-family: 'Roboto Slab', serif;
     text-decoration: none;
     color: white;
@@ -132,3 +140,25 @@ h1 {
     font-style: italic;
     margin: 35px;
 }
+
+.h5 {
+    padding-top: 210px;
+    font-family: "Apple SD Gothic Neo", sans-serif;
+    font-weight: 700;
+    font-size: 64px;
+    line-height: 1.5;
+    color: white;
+    text-align: center;
+  }
+
+  .imglist {
+    text-align: center;
+  }
+  .imglist img {
+    width: 100px;
+    margin-top: 140px;
+    padding: 50px;
+  }
+  .imglist a {
+    text-decoration: none;
+  }
