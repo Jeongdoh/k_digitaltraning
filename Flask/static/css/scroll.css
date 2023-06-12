@@ -31,7 +31,7 @@ body {
 
 /* 스크롤 배경컬러 */
 .list:nth-child(2){
-    background-color: #e01327;
+    background-color: #7bf5c8;
     background-size: cover;
     background-attachment: fixed; 
     background-position: center; 
