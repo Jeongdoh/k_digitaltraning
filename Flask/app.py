@@ -7,7 +7,7 @@ from sklearn.metrics.pairwise import cosine_similarity,pairwise_distances
 from nltk.metrics import jaccard_distance
 
 
-app = Flask(__name__)
+app = Flask(__name__,static_url_path='/static')
 
 def preprocess_text(text):
     okt = Okt()
